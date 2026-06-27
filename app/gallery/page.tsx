@@ -10,18 +10,18 @@ import { Footer } from "@/components/footer"
 const tabs = ["همه", "محصولات", "کارخانه", "نصب"]
 
 const galleryItems = [
-  { src: "/images/gallery/hood-1.jpg", alt: "هود شومینه‌ای کلایبرگ", cat: "محصولات" },
-  { src: "/images/gallery/hood-2.jpg", alt: "هود مخفی کلایبرگ", cat: "محصولات" },
-  { src: "/images/gallery/hob-1.jpg", alt: "اجاق گاز شیشه‌ای", cat: "محصولات" },
-  { src: "/images/gallery/sink-1.jpg", alt: "سینک دست‌ساز کلایبرگ", cat: "محصولات" },
-  { src: "/images/gallery/oven-1.jpg", alt: "فر توکار کلایبرگ", cat: "محصولات" },
-  { src: "/images/gallery/factory-1.jpg", alt: "خط تولید کلایبرگ", cat: "کارخانه" },
-  { src: "/images/gallery/factory-2.jpg", alt: "کنترل کیفیت", cat: "کارخانه" },
-  { src: "/images/gallery/factory-3.jpg", alt: "کارخانه کلایبرگ", cat: "کارخانه" },
-  { src: "/images/gallery/install-1.jpg", alt: "نصب هود در آشپزخانه", cat: "نصب" },
-  { src: "/images/gallery/install-2.jpg", alt: "نصب اجاق گاز توکار", cat: "نصب" },
-  { src: "/images/gallery/hob-2.jpg", alt: "صفحه گاز استیل", cat: "محصولات" },
-  { src: "/images/gallery/sink-2.jpg", alt: "سینک گرانیتی", cat: "محصولات" },
+  { src: "/images/gallery/g1.png", alt: "آشپزخانه مجهز به هود شومینه‌ای کلایبرگ", cat: "نصب" },
+  { src: "/images/gallery/g2.png", alt: "اجاق گاز شیشه‌ای کلایبرگ در حال استفاده", cat: "محصولات" },
+  { src: "/images/gallery/g3.png", alt: "سینک دست‌ساز استیل کلایبرگ", cat: "محصولات" },
+  { src: "/images/gallery/g4.png", alt: "فر توکار کلایبرگ", cat: "محصولات" },
+  { src: "/images/gallery/g5.png", alt: "آشپزخانه مدرن کلایبرگ", cat: "نصب" },
+  { src: "/images/gallery/g6.png", alt: "جزئیات هود طلایی مشکی کلایبرگ", cat: "محصولات" },
+  { src: "/images/products/H225.png", alt: "هود شومینه‌ای H 225", cat: "محصولات" },
+  { src: "/images/products/H232.png", alt: "هود طلایی H 232", cat: "محصولات" },
+  { src: "/images/products/G339.png", alt: "اجاق گاز شیشه‌ای G 339", cat: "محصولات" },
+  { src: "/images/products/S124.png", alt: "سینک دست‌ساز S 124", cat: "محصولات" },
+  { src: "/images/products/O410.png", alt: "فر توکار O 410", cat: "محصولات" },
+  { src: "/images/about-factory.png", alt: "کارخانه تولید کلایبرگ", cat: "کارخانه" },
 ]
 
 export default function GalleryPage() {

@@ -35,7 +35,7 @@ export const products: Product[] = [
     categoryLabel: 'هود شومینه‌ای',
     subcategory: 'chimney',
     description: 'هود شومینه‌ای پریمیوم با بدنه شیشه مشکی و تاج مشبک. جک گازی، ریموت کنترل و سنسور هوشمند دود و دما.',
-    image: '/images/products/H225.jpg',
+    image: '/images/products/H225.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -66,7 +66,7 @@ export const products: Product[] = [
     categoryLabel: 'هود شومینه‌ای',
     subcategory: 'chimney',
     description: 'هود شومینه‌ای با بدنه شیشه مشکی و استیل. ریموت کنترل و ترموگارد.',
-    image: '/images/products/H205.jpg',
+    image: '/images/products/H225.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -86,7 +86,7 @@ export const products: Product[] = [
     categoryLabel: 'هود شومینه‌ای',
     subcategory: 'chimney',
     description: 'هود شومینه‌ای با بدنه شیشه مشکی و استیل و سنسور دود و دما.',
-    image: '/images/products/H203.jpg',
+    image: '/images/products/H225.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -104,7 +104,7 @@ export const products: Product[] = [
     categoryLabel: 'هود شومینه‌ای',
     subcategory: 'chimney',
     description: 'هود شومینه‌ای با بدنه شیشه سفید و تاج سفید مشبک.',
-    image: '/images/products/H200.jpg',
+    image: '/images/products/H225.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -123,7 +123,7 @@ export const products: Product[] = [
     categoryLabel: 'هود شومینه‌ای',
     subcategory: 'chimney',
     description: 'هود شومینه‌ای پریمیوم با جک گازی و سنسور هوشمند.',
-    image: '/images/products/H219.jpg',
+    image: '/images/products/H225.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -141,7 +141,7 @@ export const products: Product[] = [
     categoryLabel: 'هود شومینه‌ای',
     subcategory: 'chimney',
     description: 'هود شومینه‌ای با جک گازی و ریموت کنترل.',
-    image: '/images/products/H220.jpg',
+    image: '/images/products/H225.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -159,7 +159,7 @@ export const products: Product[] = [
     categoryLabel: 'هود شومینه‌ای',
     subcategory: 'chimney',
     description: 'هود شومینه‌ای رنگی با بدنه شیشه آبی.',
-    image: '/images/products/H204.jpg',
+    image: '/images/products/H225.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -178,7 +178,7 @@ export const products: Product[] = [
     categoryLabel: 'هود شومینه‌ای',
     subcategory: 'chimney',
     description: 'هود شومینه‌ای رنگی جسورانه با بدنه شیشه قرمز.',
-    image: '/images/products/H201.jpg',
+    image: '/images/products/H225.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -197,7 +197,7 @@ export const products: Product[] = [
     categoryLabel: 'هود شومینه‌ای',
     subcategory: 'touchless',
     description: 'هود هوشمند با قابلیت کنترل با حرکت دست. تکنولوژی لمس‌نشده پیشرفته.',
-    image: '/images/products/H233S.jpg',
+    image: '/images/products/H233S.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -216,7 +216,7 @@ export const products: Product[] = [
     categoryLabel: 'هود شومینه‌ای',
     subcategory: 'chimney',
     description: 'هود پریمیوم با بدنه شیشه مشکی و طلایی لاکچری.',
-    image: '/images/products/H232.jpg',
+    image: '/images/products/H232.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -238,7 +238,7 @@ export const products: Product[] = [
     categoryLabel: 'هود مخفی',
     subcategory: 'hidden',
     description: 'هود مخفی ۷۰ سانتی با ریموت کنترل و موتور فلزی ۴ دور.',
-    image: '/images/products/H215.jpg',
+    image: '/images/products/H215.png',
     specs: {
       'سایز': '۷۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -258,7 +258,7 @@ export const products: Product[] = [
     categoryLabel: 'هود مخفی',
     subcategory: 'hidden',
     description: 'هود مخفی ۷۰ سانتی با درب آینه‌ای دودی.',
-    image: '/images/products/H234.jpg',
+    image: '/images/products/H215.png',
     specs: {
       'سایز': '۷۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -276,7 +276,7 @@ export const products: Product[] = [
     categoryLabel: 'هود مخفی',
     subcategory: 'touchless',
     description: 'هود مخفی ۸۰ سانتی با قابلیت کنترل با حرکت دست. بست فلزی با قابلیت تنظیم.',
-    image: '/images/products/H236.jpg',
+    image: '/images/products/H236.png',
     specs: {
       'سایز': '۸۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -296,7 +296,7 @@ export const products: Product[] = [
     categoryLabel: 'هود مخفی',
     subcategory: 'hidden',
     description: 'هود مخفی ۸۰ سانتی با بدنه شیشه مشکی. سنسور دود و دما و بست فلزی.',
-    image: '/images/products/H230.jpg',
+    image: '/images/products/H215.png',
     specs: {
       'سایز': '۸۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -314,7 +314,7 @@ export const products: Product[] = [
     categoryLabel: 'هود مخفی',
     subcategory: 'hidden',
     description: 'هود مخفی ۸۰ سانتی با بدنه استیل طلایی پریمیوم.',
-    image: '/images/products/H230GOLD.jpg',
+    image: '/images/products/H230GOLD.png',
     specs: {
       'سایز': '۸۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
@@ -336,7 +336,7 @@ export const products: Product[] = [
     categoryLabel: 'اجاق گاز شیشه‌ای',
     subcategory: 'glass',
     description: 'صفحه گاز شیشه‌ای ۹۰ سانتی با ۵ شعله. بدنه شیشه سکوریت نشکن ۸ میلی‌متر با لبه آینه‌ای.',
-    image: '/images/products/G339.jpg',
+    image: '/images/products/G339.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'تعداد شعله': '۵ شعله',
@@ -358,7 +358,7 @@ export const products: Product[] = [
     categoryLabel: 'اجاق گاز شیشه‌ای',
     subcategory: 'glass',
     description: 'صفحه گاز شیشه‌ای ۹۰ سانتی با ۵ شعله.',
-    image: '/images/products/G371.jpg',
+    image: '/images/products/G339.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'تعداد شعله': '۵ شعله',
@@ -376,7 +376,7 @@ export const products: Product[] = [
     categoryLabel: 'اجاق گاز شیشه‌ای',
     subcategory: 'glass',
     description: 'صفحه گاز شیشه‌ای ۹۰ سانتی با ۶ شعله. دارای ۲ پلوپز.',
-    image: '/images/products/G306.jpg',
+    image: '/images/products/G306.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'تعداد شعله': '۶ شعله',
@@ -395,7 +395,7 @@ export const products: Product[] = [
     categoryLabel: 'اجاق گاز شیشه‌ای',
     subcategory: 'glass',
     description: 'صفحه گاز شیشه‌ای ۷۰ سانتی با ۳ شعله.',
-    image: '/images/products/G305.jpg',
+    image: '/images/products/G339.png',
     specs: {
       'سایز': '۷۰ سانتی‌متر',
       'تعداد شعله': '۳ شعله',
@@ -413,7 +413,7 @@ export const products: Product[] = [
     categoryLabel: 'اجاق گاز شیشه‌ای',
     subcategory: 'glass',
     description: 'صفحه گاز شیشه‌ای ۹۰ سانتی با ۵ شعله قارچی.',
-    image: '/images/products/G391DM.jpg',
+    image: '/images/products/G391DM.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'تعداد شعله': '۵ شعله',
@@ -435,7 +435,7 @@ export const products: Product[] = [
     categoryLabel: 'اجاق گاز استیل',
     subcategory: 'steel',
     description: 'صفحه گاز استیل ۹۰ سانتی با ۵ شعله. بدنه استیل ۴۳۰.',
-    image: '/images/products/S360.jpg',
+    image: '/images/products/S360.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'تعداد شعله': '۵ شعله',
@@ -455,7 +455,7 @@ export const products: Product[] = [
     categoryLabel: 'اجاق گاز استیل',
     subcategory: 'steel',
     description: 'صفحه گاز استیل ۹۰ سانتی با ۵ شعله.',
-    image: '/images/products/S350.jpg',
+    image: '/images/products/S360.png',
     specs: {
       'سایز': '۹۰ سانتی‌متر',
       'تعداد شعله': '۵ شعله',
@@ -472,7 +472,7 @@ export const products: Product[] = [
     categoryLabel: 'اجاق گاز استیل',
     subcategory: 'steel',
     description: 'صفحه گاز استیل ۷۰ سانتی با ۳ شعله.',
-    image: '/images/products/S303.jpg',
+    image: '/images/products/S360.png',
     specs: {
       'سایز': '۷۰ سانتی‌متر',
       'تعداد شعله': '۳ شعله',
@@ -491,7 +491,7 @@ export const products: Product[] = [
     categoryLabel: 'سینک دست‌ساز',
     subcategory: 'handmade',
     description: 'سینک دست‌ساز تک لگن یک سینی (Under-Mount). مناسب صفحه‌های کورین، سنگی و شیشه‌ای.',
-    image: '/images/products/S124.jpg',
+    image: '/images/products/S124.png',
     specs: {
       'سایز': '۴۸۳×۱۳۸ میلی‌متر',
       'عمق': '۲۳۰ میلی‌متر',
@@ -510,7 +510,7 @@ export const products: Product[] = [
     categoryLabel: 'سینک دست‌ساز',
     subcategory: 'handmade',
     description: 'سینک دست‌ساز توکار تک لگن با گوشه‌های زاویه ۹۰ درجه. قابل نصب در صفحات کورین، ام‌دی‌اف، کوارتز و هم‌سطح.',
-    image: '/images/products/S103.jpg',
+    image: '/images/products/S103.png',
     specs: {
       'سایز': '۷۵۰×۵۰۰ میلی‌متر',
       'عمق': '۲۰۰ میلی‌متر',
@@ -529,7 +529,7 @@ export const products: Product[] = [
     categoryLabel: 'سینک دست‌ساز',
     subcategory: 'handmade',
     description: 'سینک دست‌ساز دو لگن یک سینی (Under-Mount). نصب زیر صفحه‌های سنگی و شیشه‌ای.',
-    image: '/images/products/S122.jpg',
+    image: '/images/products/S124.png',
     specs: {
       'سایز': '۴۸۸×۱۱۶۰ میلی‌متر',
       'عمق': '۲۳۰ میلی‌متر',
@@ -549,7 +549,7 @@ export const products: Product[] = [
     categoryLabel: 'سینک گرانیتی',
     subcategory: 'granite',
     description: 'سینک گرانیتی دو لگن با ضمانت ۲ سال. در رنگ‌های متنوع مشکی و سفید.',
-    image: '/images/products/G168.jpg',
+    image: '/images/products/G168.png',
     specs: {
       'سایز': '۵۰۰×۱۱۶۰ میلی‌متر',
       'عمق لگن': '۲۰۰ میلی‌متر',
@@ -567,7 +567,7 @@ export const products: Product[] = [
     categoryLabel: 'سینک گرانیتی',
     subcategory: 'granite',
     description: 'سینک گرانیتی تک لگن با ضمانت ۲ سال.',
-    image: '/images/products/G167.jpg',
+    image: '/images/products/G168.png',
     specs: {
       'سایز': '۴۰۰×۷۵۰ میلی‌متر',
       'عمق لگن': '۱۹۰ میلی‌متر',
@@ -584,7 +584,7 @@ export const products: Product[] = [
     categoryLabel: 'سینک گرانیتی',
     subcategory: 'granite',
     description: 'سینک گرانیتی تک لگن بزرگ با ضمانت ۲ سال.',
-    image: '/images/products/G160.jpg',
+    image: '/images/products/G160.png',
     specs: {
       'سایز': '۵۰۰×۱۰۰۰ میلی‌متر',
       'عمق لگن': '۲۰۰ میلی‌متر',
@@ -604,7 +604,7 @@ export const products: Product[] = [
     categoryLabel: 'سینک فانتزی',
     subcategory: 'fancy',
     description: 'سینک فانتزی روکار دو لگن تک سینی. استیل ۴۳۰.',
-    image: '/images/products/S142.jpg',
+    image: '/images/products/S124.png',
     specs: {
       'سایز': '۶۰۰×۱۲۰۰ میلی‌متر',
       'عمق': '۲۰۰ میلی‌متر',
@@ -623,7 +623,7 @@ export const products: Product[] = [
     categoryLabel: 'فر توکار',
     subcategory: 'electric',
     description: 'فر برقی ۶۰ سانتی با ۸ برنامه پخت. محفظه ۷۵ لیتری با لعاب Easy to Clean.',
-    image: '/images/products/O410.jpg',
+    image: '/images/products/O410.png',
     specs: {
       'سایز': '۶۰ سانتی‌متر',
       'برنامه پخت': '۸ برنامه',
@@ -643,7 +643,7 @@ export const products: Product[] = [
     categoryLabel: 'فر توکار',
     subcategory: 'electric',
     description: 'فر برقی ۶۰ سانتی با ۱۳ برنامه پخت. پروب دمای گوشت و پخت تأخیری.',
-    image: '/images/products/O411.jpg',
+    image: '/images/products/O410.png',
     specs: {
       'سایز': '۶۰ سانتی‌متر',
       'برنامه پخت': '۱۳ برنامه',
@@ -663,7 +663,7 @@ export const products: Product[] = [
     categoryLabel: 'فر توکار',
     subcategory: 'electric',
     description: 'فر برقی ۶۰ سانتی با ۱۳ برنامه پخت. بدنه شیشه سفید و استیل.',
-    image: '/images/products/O414.jpg',
+    image: '/images/products/O414.png',
     specs: {
       'سایز': '۶۰ سانتی‌متر',
       'برنامه پخت': '۱۳ برنامه',
@@ -682,7 +682,7 @@ export const products: Product[] = [
     categoryLabel: 'فر توکار',
     subcategory: 'electric',
     description: 'فر برقی ۶۰ سانتی دو طبقه با ۱۸ برنامه پخت. پخت مجزا در هر طبقه. محفظه ۹۰ لیتری.',
-    image: '/images/products/O415.jpg',
+    image: '/images/products/O415.png',
     specs: {
       'سایز': '۶۰ سانتی‌متر',
       'برنامه پخت': '۱۸ برنامه در دو طبقه',
@@ -704,7 +704,7 @@ export const products: Product[] = [
     categoryLabel: 'ماکروویو + فر',
     subcategory: 'combination',
     description: 'ماکروویو + فر ۶۰×۳۹ سانتی با ۱۰ برنامه پخت و کانوکشن. گریل ۱۲۰۰ وات.',
-    image: '/images/products/M501.jpg',
+    image: '/images/products/M501.png',
     specs: {
       'سایز': '۶۰×۳۹ سانتی‌متر',
       'حجم': '۴۳ لیتر',
@@ -724,7 +724,7 @@ export const products: Product[] = [
     categoryLabel: 'ماکروویو + فر',
     subcategory: 'combination',
     description: 'ماکروویو + فر با قابلیت‌های پیشرفته و دستگیره تمام استیل.',
-    image: '/images/products/M502.jpg',
+    image: '/images/products/M501.png',
     specs: {
       'سایز': '۶۰×۳۹ سانتی‌متر',
       'حجم': '۴۳ لیتر',

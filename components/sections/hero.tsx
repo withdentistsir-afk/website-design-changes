@@ -25,7 +25,7 @@ export function Hero() {
         className="absolute inset-0 z-0"
       >
         <Image
-          src="/images/hero-hood.jpg"
+          src="/images/hero-hood.png"
           alt="هود شومینه‌ای کلایبرگ"
           fill
           priority

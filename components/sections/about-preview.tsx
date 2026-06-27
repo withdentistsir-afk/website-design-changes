@@ -30,7 +30,7 @@ export function AboutPreview() {
           >
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
               <Image
-                src="/images/factory.jpg"
+                src="/images/about-factory.png"
                 alt="کارخانه کلایبرگ"
                 fill
                 className="object-cover"

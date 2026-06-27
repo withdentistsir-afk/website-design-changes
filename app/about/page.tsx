@@ -41,7 +41,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-background">
         <div className="absolute inset-0">
-          <Image src="/images/factory.jpg" alt="کارخانه کلایبرگ" fill className="object-cover" priority />
+          <Image src="/images/about-factory.png" alt="کارخانه کلایبرگ" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-background/75" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,transparent_40%,rgba(0,0,0,0.8)_100%)]" />
         </div>
