@@ -1,0 +1,34 @@
+import type { Metadata, Viewport } from 'next'
+import './globals.css'
+
+export const metadata: Metadata = {
+  title: 'کلایبرگ | پیشرو در نوآوری لوازم آشپزخانه',
+  description: 'کلایبرگ، تولیدکننده پیشرو هود، فر، سینک و اجاق گاز توکار با بالاترین استانداردهای کیفیت و ایمنی. بهانه‌ای برای آشپزی.',
+  keywords: ['کلایبرگ', 'هود آشپزخانه', 'اجاق گاز', 'سینک', 'فر توکار', 'لوازم آشپزخانه'],
+  openGraph: {
+    title: 'کلایبرگ | بهانه‌ای برای آشپزی',
+    description: 'پیشرو در نوآوری و کیفیت لوازم آشپزخانه',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#0a0a0a',
+  width: 'device-width',
+  initialScale: 1,
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="fa" dir="rtl" className="bg-background">
+      <body className="font-sans antialiased bg-background text-foreground">
+        {children}
+      </body>
+    </html>
+  )
+}
