@@ -1,29 +1,41 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect, Suspense } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { useSearchParams } from "next/navigation"
 import { motion, useInView } from "framer-motion"
-import { ArrowLeft, SlidersHorizontal } from "lucide-react"
+import { ArrowLeft, SlidersHorizontal, Search, X } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { products, categories, type ProductCategory } from "@/lib/data"
 
-const catMap: Record<string, string> = {
-  hood: "هود آشپزخانه",
-  hob: "اجاق گاز",
-  sink: "سینک آشپزخانه",
-  oven: "فر توکار",
-  microwave: "ماکروویو",
-}
-
-export default function ProductsPage() {
+function ProductsContent() {
+  const searchParams = useSearchParams()
   const [active, setActive] = useState<ProductCategory | "all">("all")
+  const [search, setSearch] = useState("")
   const headerRef = useRef(null)
   const headerInView = useInView(headerRef, { once: true })
 
-  const filtered =
-    active === "all" ? products : products.filter((p) => p.category === active)
+  // Sync from URL query params
+  useEffect(() => {
+    const cat = searchParams.get("cat")
+    const q = searchParams.get("search")
+    if (cat && categories.some((c) => c.id === cat)) setActive(cat as ProductCategory)
+    if (q) setSearch(q)
+  }, [searchParams])
+
+  const normalized = search.trim().toLowerCase()
+  const filtered = products.filter((p) => {
+    const matchesCat = active === "all" || p.category === active
+    const matchesSearch =
+      normalized === "" ||
+      [p.name, p.model, p.categoryLabel, p.description, ...p.features]
+        .join(" ")
+        .toLowerCase()
+        .includes(normalized)
+    return matchesCat && matchesSearch
+  })
 
   return (
     <main className="min-h-screen bg-background">
@@ -44,7 +56,7 @@ export default function ProductsPage() {
             initial={{ opacity: 0, y: 25 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-6xl font-black text-foreground mb-4"
+            className="text-3xl sm:text-4xl font-black text-foreground mb-4"
           >
             همه محصولات
           </motion.h1>
@@ -61,7 +73,28 @@ export default function ProductsPage() {
 
       {/* Filter Bar */}
       <div className="sticky top-20 z-30 bg-background/95 backdrop-blur-xl border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-6 py-4 space-y-3">
+          {/* Search input */}
+          <div className="relative">
+            <Search size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="جستجوی محصولات ..."
+              aria-label="جستجوی محصولات"
+              className="w-full bg-card border border-border rounded-full py-2.5 pr-11 pl-10 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-gold/60 transition-colors"
+            />
+            {search && (
+              <button
+                onClick={() => setSearch("")}
+                aria-label="پاک کردن جستجو"
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X size={16} />
+              </button>
+            )}
+          </div>
           <div className="flex items-center gap-3 overflow-x-auto pb-1 scrollbar-hide">
             <SlidersHorizontal size={14} className="text-muted-foreground shrink-0" />
             <button
@@ -149,5 +182,13 @@ export default function ProductsPage() {
 
       <Footer />
     </main>
+  )
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
+      <ProductsContent />
+    </Suspense>
   )
 }

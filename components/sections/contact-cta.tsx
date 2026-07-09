@@ -20,7 +20,7 @@ export function ContactCTA() {
           className="relative bg-card border border-border rounded-3xl overflow-hidden p-12 sm:p-16 text-center"
         >
           {/* Background accent */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,oklch(0.71_0.09_80/8%)_0%,transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(86,181,190,0.08)_0%,transparent_70%)]" />
 
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 mb-6">
@@ -29,7 +29,7 @@ export function ContactCTA() {
               <span className="w-8 h-px bg-gold" />
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-black text-foreground mb-5 text-balance">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground mb-5 text-balance">
               آماده همکاری هستیم
             </h2>
             <p className="text-base text-muted-foreground max-w-xl mx-auto leading-relaxed mb-10 text-pretty">

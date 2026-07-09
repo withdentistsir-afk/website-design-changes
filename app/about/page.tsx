@@ -58,7 +58,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-black text-foreground text-balance"
+            className="text-3xl sm:text-4xl font-black text-foreground text-balance"
           >
             درباره کلایبرگ
           </motion.h1>
@@ -88,7 +88,7 @@ export default function AboutPage() {
               <span className="text-gold text-xs tracking-[0.35em] font-medium uppercase">ارزش‌های ما</span>
               <span className="w-8 h-px bg-gold" />
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-foreground">چه چیزی ما را متمایز می‌کند</h2>
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground">چه چیزی ما را متمایز می‌کند</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v, i) => (
@@ -120,7 +120,7 @@ export default function AboutPage() {
               <span className="text-gold text-xs tracking-[0.35em] font-medium uppercase">مسیر رشد</span>
               <span className="w-8 h-px bg-gold" />
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-foreground">تاریخچه کلایبرگ</h2>
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground">تاریخچه کلایبرگ</h2>
           </div>
           <div className="relative">
             {/* Timeline line */}
@@ -159,7 +159,7 @@ export default function AboutPage() {
             <span className="text-gold text-xs tracking-[0.35em] font-medium uppercase">گواهینامه‌ها</span>
             <span className="w-8 h-px bg-gold" />
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-foreground mb-14">استانداردها و افتخارات</h2>
+          <h2 className="text-2xl sm:text-3xl font-black text-foreground mb-14">استانداردها و افتخارات</h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             {certificates.map((cert, i) => (
               <motion.div

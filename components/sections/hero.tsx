@@ -1,13 +1,22 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import Link from "next/link"
+import { useRef, useState } from "react"
+import { useRouter } from "next/navigation"
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { ArrowLeft } from "lucide-react"
+import { Search } from "lucide-react"
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null)
+  const router = useRouter()
+  const [query, setQuery] = useState("")
+
+  function handleSearch(e: React.FormEvent) {
+    e.preventDefault()
+    const q = query.trim()
+    router.push(q ? `/products?search=${encodeURIComponent(q)}` : "/products")
+  }
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -47,55 +56,55 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 mb-8"
+          className="inline-flex items-center gap-2 mb-6"
         >
           <span className="w-12 h-px bg-gold" />
           <span className="text-gold text-xs tracking-[0.4em] font-medium uppercase">Since 2009</span>
           <span className="w-12 h-px bg-gold" />
         </motion.div>
 
-        {/* Main heading */}
+        {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl sm:text-7xl lg:text-8xl font-black text-foreground leading-tight tracking-tight text-balance mb-6"
+          className="text-2xl sm:text-4xl font-black text-foreground leading-tight tracking-tight text-balance mb-8"
         >
-          بهانه‌ای
-          <span className="block text-gold">برای آشپزی</span>
+          محصول مورد نظر خود را
+          <span className="text-gold"> جستجو </span>
+          کنید
         </motion.h1>
 
-        {/* Subtitle */}
-        <motion.p
+        {/* Professional search box */}
+        <motion.form
+          onSubmit={handleSearch}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-base sm:text-lg text-foreground/60 max-w-xl mx-auto leading-relaxed mb-12 text-pretty"
+          className="max-w-2xl mx-auto"
+          role="search"
         >
-          کلایبرگ، پیشرو در نوآوری و کیفیت لوازم آشپزخانه. هود، فر، سینک و اجاق گاز توکار با بالاترین استانداردهای بین‌المللی.
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <Link
-            href="/products"
-            className="group flex items-center gap-3 px-8 py-4 bg-gold text-background font-semibold text-sm rounded-full hover:bg-gold-light transition-all duration-300 hover:gap-4"
-          >
-            مشاهده محصولات
-            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-          </Link>
-          <Link
-            href="/about"
-            className="px-8 py-4 border border-foreground/30 text-foreground/80 font-medium text-sm rounded-full hover:border-foreground hover:text-foreground transition-all duration-300"
-          >
-            درباره کلایبرگ
-          </Link>
-        </motion.div>
+          <div className="group flex items-center gap-2 bg-card/80 backdrop-blur-xl border border-border rounded-full p-2 pr-6 shadow-2xl focus-within:border-gold/60 transition-colors duration-300">
+            <Search size={20} className="text-muted-foreground shrink-0 group-focus-within:text-gold transition-colors" />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="جستجو در هود، اجاق گاز، سینک، فر ..."
+              aria-label="جستجوی محصولات"
+              className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground text-sm sm:text-base outline-none py-2"
+            />
+            <button
+              type="submit"
+              className="shrink-0 px-6 py-3 bg-gold text-background font-semibold text-sm rounded-full hover:bg-gold-light transition-colors duration-300"
+            >
+              جستجو
+            </button>
+          </div>
+          <p className="text-xs text-foreground/40 mt-4">
+            بیش از ۱۰۰ محصول در ۵ دسته‌بندی — هود، اجاق گاز، سینک، فر و ماکروویو
+          </p>
+        </motion.form>
       </motion.div>
 
       {/* Scroll indicator */}

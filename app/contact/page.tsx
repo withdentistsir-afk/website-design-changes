@@ -59,7 +59,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 25 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-6xl font-black text-foreground"
+            className="text-3xl sm:text-4xl font-black text-foreground"
           >
             تماس با کلایبرگ
           </motion.h1>

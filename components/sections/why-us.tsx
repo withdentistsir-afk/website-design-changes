@@ -71,7 +71,7 @@ export function WhyUs() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1, duration: 0.7 }}
-          className="text-3xl sm:text-5xl font-black text-foreground text-balance"
+          className="text-2xl sm:text-3xl font-black text-foreground text-balance"
         >
           تفاوت را احساس کنید
         </motion.h2>

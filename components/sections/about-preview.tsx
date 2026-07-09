@@ -61,7 +61,7 @@ export function AboutPreview() {
               <span className="w-8 h-px bg-gold" />
               <span className="text-gold text-xs tracking-[0.35em] font-medium uppercase">درباره ما</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-foreground leading-tight mb-6 text-balance">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground leading-tight mb-6 text-balance">
               قلب خانه‌های شما
             </h2>
             <p className="text-base text-muted-foreground leading-relaxed mb-8 text-pretty">

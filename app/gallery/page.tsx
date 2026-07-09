@@ -52,7 +52,7 @@ export default function GalleryPage() {
             initial={{ opacity: 0, y: 25 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-6xl font-black text-foreground"
+            className="text-3xl sm:text-4xl font-black text-foreground"
           >
             تصاویر کلایبرگ
           </motion.h1>

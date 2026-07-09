@@ -55,14 +55,14 @@
   --secondary-foreground: oklch(0.96 0 0);
   --muted: oklch(0.18 0 0);
   --muted-foreground: oklch(0.58 0 0);
-  --accent: oklch(0.71 0.09 80);
+  --accent: #56b5be;
   --accent-foreground: oklch(0.1 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.71 0.09 80);
-  --gold: oklch(0.71 0.09 80);
-  --gold-light: oklch(0.84 0.065 80);
+  --ring: #56b5be;
+  --gold: #56b5be;
+  --gold-light: #82cdd4;
   --surface: oklch(0.16 0 0);
   --surface-2: oklch(0.22 0 0);
   --radius: 0.5rem;
@@ -104,17 +104,17 @@
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.71 0.09 80);
+  background: #56b5be;
 }
 
 /* Selection color */
 ::selection {
-  background: oklch(0.71 0.09 80 / 30%);
+  background: color-mix(in srgb, #56b5be 30%, transparent);
   color: oklch(0.96 0 0);
 }
 
-/* Gold accent divider */
+/* Accent divider */
 .gold-line {
-  background: linear-gradient(90deg, transparent, oklch(0.71 0.09 80), transparent);
+  background: linear-gradient(90deg, transparent, #56b5be, transparent);
   height: 1px;
 }
