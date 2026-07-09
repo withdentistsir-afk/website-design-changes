@@ -183,7 +183,7 @@ export const products: Product[] = [
       'سایز': '۹۰ سانتی‌متر',
       'قدرت مکش': '۸۵۰ متر مکعب در ساعت',
       'موتور': 'توربو فلزی ۲ سر شفت ۴ دور',
-      'فیلتر': 'آلومینیومی مگنتی سه لایه',
+      'فیلتر': 'آلو��ینیومی مگنتی سه لایه',
       'صدا': '۵۵ دسیبل',
     },
     features: ['بدنه شیشه قرمز', 'تاج مشکی مشبک', 'صفحه کلید لمسی', 'جک گازی', 'ریموت کنترل'],
@@ -749,11 +749,251 @@ export const stats = [
   { value: '۱۵+', label: 'سال تجربه' },
   { value: '۱۰۰+', label: 'محصول متنوع' },
   { value: '۵۰+', label: 'نمایندگی در ایران' },
-  { value: '۱۰۰۰۰۰+', label: 'مشتری راضی' },
+  { value: '۱۰۰۰��۰+', label: 'مشتری راضی' },
 ]
 
 export const certificates = [
   { name: 'ISO', description: 'استاندارد بین‌المللی مدیریت کیفیت' },
   { name: 'CE', description: 'گواهینامه انطباق اروپایی' },
   { name: 'استاندارد ملی ایران', description: 'تأییدیه استاندارد ملی ایران' },
+]
+
+export interface Representative {
+  id: string
+  name: string
+  company: string
+  address: string
+  phone: string
+  mobile?: string
+}
+
+export interface ProvinceRepresentatives {
+  /** ISO 3166-2 code, e.g. "IR-07" */
+  isoCode: string
+  provinceName: string
+  representatives: Representative[]
+}
+
+export const provinceRepresentatives: ProvinceRepresentatives[] = [
+  {
+    isoCode: 'IR-07',
+    provinceName: 'استان تهران',
+    representatives: [
+      { id: 'thr-1', name: 'علی محمدی', company: 'نمایندگی مرکزی کلایبرگ تهران', address: 'تهران، خیابان ولیعصر، پلاک ۴۵۲', phone: '۰۲۱-۸۸۱۲۳۴۵۶', mobile: '۰۹۱۲-۱۲۳-۴۵۶۷' },
+      { id: 'thr-2', name: 'سارا رضایی', company: 'فروشگاه آشپزخانه مدرن', address: 'تهران، سعادت‌آباد، بلوار دریا', phone: '۰۲۱-۲۲۵۶۷۸۹۰', mobile: '۰۹۱۲-۹۸۷-۶۵۴۳' },
+      { id: 'thr-3', name: 'حسین کریمی', company: 'کلایبرگ غرب تهران', address: 'تهران، پونک، خیابان اشرفی اصفهانی', phone: '۰۲۱-۴۴۳۴۵۶۷۸', mobile: '۰۹۱۲-۳۴۵-۶۷۸۹' },
+    ],
+  },
+  {
+    isoCode: 'IR-10',
+    provinceName: 'استان اصفهان',
+    representatives: [
+      { id: 'isf-1', name: 'محمد اکبری', company: 'نمایندگی کلایبرگ اصفهان', address: 'اصفهان، خیابان مشتاق، کوچه ۷', phone: '۰۳۱-۳۶۲۱۴۵۶۷', mobile: '۰۹۱۳-۲۳۴-۵۶۷۸' },
+      { id: 'isf-2', name: 'فاطمه نوری', company: 'پخش لوازم آشپزخانه نوری', address: 'اصفهان، چهارباغ بالا، نرسیده به میدان آزادی', phone: '۰۳۱-۳۲۳۴۵۶۷۸' },
+    ],
+  },
+  {
+    isoCode: 'IR-20',
+    provinceName: 'استان فارس',
+    representatives: [
+      { id: 'far-1', name: 'رضا شیرازی', company: 'نمایندگی کلایبرگ شیراز', address: 'شیراز، بلوار ستارخان، نبش کوچه ۱۴', phone: '۰۷۱-۳۲۳۴۱۲۳۴', mobile: '۰۹۱۷-۱۲۳-۴۵۶۷' },
+    ],
+  },
+  {
+    isoCode: 'IR-30',
+    provinceName: 'استان خراسان رضوی',
+    representatives: [
+      { id: 'khr-1', name: 'امیر حسینی', company: 'کلایبرگ مشهد', address: 'مشهد، بلوار وکیل‌آباد، خیابان فرخی', phone: '۰۵۱-۳۵۲۳۴۵۶۷', mobile: '۰۹۱۵-۳۴۵-۶۷۸۹' },
+      { id: 'khr-2', name: 'نیلوفر قاسمی', company: 'فروشگاه آشپزخانه توس', address: 'مشهد، بلوار سجاد، مجتمع تجاری پارس', phone: '۰۵۱-۳۶۲۱۸۹۰۱' },
+    ],
+  },
+  {
+    isoCode: 'IR-19',
+    provinceName: 'استان آذربایجان شرقی',
+    representatives: [
+      { id: 'aze-1', name: 'بهروز تبریزی', company: 'نمایندگی کلایبرگ تبریز', address: 'تبریز، خیابان آزادی، روبه‌روی پارک ائل‌گلی', phone: '۰۴۱-۳۳۲۱۴۵۶۷', mobile: '۰۹۱۴-۱۲۳-۴۵۶۷' },
+    ],
+  },
+  {
+    isoCode: 'IR-13',
+    provinceName: 'استان خوزستان',
+    representatives: [
+      { id: 'khz-1', name: 'مریم دشتی', company: 'کلایبرگ اهواز', address: 'اهواز، کیانپارس، خیابان ۱۴', phone: '۰۶۱-۳۳۳۲۱۴۵۶', mobile: '۰۹۱۶-۲۳۴-۵۶۷۸' },
+      { id: 'khz-2', name: 'کریم موسوی', company: 'پخش آشپزخانه جنوب', address: 'اهواز، گلستان، خیابان امام خمینی', phone: '۰۶۱-۳۳۶۱۲۳۴۵' },
+    ],
+  },
+  {
+    isoCode: 'IR-22',
+    provinceName: 'استان کرمانشاه',
+    representatives: [
+      { id: 'ksn-1', name: 'داود عزیزی', company: 'نمایندگی کلایبرگ کرمانشاه', address: 'کرمانشاه، بلوار شهید بهشتی، کوچه ۳', phone: '۰۸۳-۳۴۲۳۱۲۳۴', mobile: '۰۹۱۸-۱۲۳-۴۵۶۷' },
+    ],
+  },
+  {
+    isoCode: 'IR-23',
+    provinceName: 'استان گیلان',
+    representatives: [
+      { id: 'gln-1', name: 'شهرام رشتی', company: 'نمایندگی کلایبرگ رشت', address: 'رشت، خیابان مطهری، نرسیده به میدان گیل', phone: '۰۱۳-۳۳۴۵۶۷۸۹', mobile: '۰۹۱۱-۱۲۳-۴۵۶۷' },
+    ],
+  },
+  {
+    isoCode: 'IR-03',
+    provinceName: 'استان مازندران',
+    representatives: [
+      { id: 'mzn-1', name: 'پریسا علوی', company: 'کلایبرگ ساری', address: 'ساری، بلوار پاسداران، مجتمع تجاری آفتاب', phone: '۰۱۱-۳۳۲۱۴۵۶۷', mobile: '۰۹۱۱-۳۴۵-۶۷۸۹' },
+      { id: 'mzn-2', name: 'محسن یزدانی', company: 'فروشگاه لوازم خانگی نور', address: 'بابل، میدان امام، خیابان شریعتی', phone: '۰۱۱-۳۲۲۱۳۴۵۶' },
+    ],
+  },
+  {
+    isoCode: 'IR-08',
+    provinceName: 'استان کرمان',
+    representatives: [
+      { id: 'krm-1', name: 'علیرضا کرمانی', company: 'نمایندگی کلایبرگ کرمان', address: 'کرمان، خیابان جمهوری، مجتمع تجاری بهار', phone: '۰۳۴-۳۲۳۲۱۲۳۴', mobile: '۰۹۱۳-۵۶۷-۸۹۰۱' },
+    ],
+  },
+  {
+    isoCode: 'IR-05',
+    provinceName: 'استان البرز',
+    representatives: [
+      { id: 'alb-1', name: 'نادر کرجی', company: 'نمایندگی کلایبرگ کرج', address: 'کرج، عظیمیه، خیابان بهشتی', phone: '۰۲۶-۳۴۵۶۷۸۹۰', mobile: '۰۹۱۲-۴۵۶-۷۸۹۰' },
+    ],
+  },
+  {
+    isoCode: 'IR-04',
+    provinceName: 'استان قزوین',
+    representatives: [
+      { id: 'qzv-1', name: 'منصور قزوینی', company: 'پخش لوازم آشپزخانه قزوین', address: 'قزوین، خیابان سپه، نبش کوچه ۱۱', phone: '۰۲۸-۳۳۲۱۴۵۶۷' },
+    ],
+  },
+  {
+    isoCode: 'IR-25',
+    provinceName: 'استان قم',
+    representatives: [
+      { id: 'qom-1', name: 'حجت‌الله صالحی', company: 'نمایندگی کلایبرگ قم', address: 'قم، بلوار محمدامین، کوچه گلستان', phone: '۰۲۵-۳۷۸۹۰۱۲۳', mobile: '۰۹۱۲-۷۸۹-۰۱۲۳' },
+    ],
+  },
+  {
+    isoCode: 'IR-06',
+    provinceName: 'استان سمنان',
+    representatives: [
+      { id: 'smn-1', name: 'کامران سمنانی', company: 'فروشگاه آشپزخانه دشت', address: 'سمنان، خیابان فردوسی، پلاک ۸۷', phone: '۰۲۳-۳۳۲۳۴۵۶۷' },
+    ],
+  },
+  {
+    isoCode: 'IR-27',
+    provinceName: 'استان گلستان',
+    representatives: [
+      { id: 'gls-1', name: 'توران گلستانی', company: 'نمایندگی کلایبرگ گرگان', address: 'گرگان، بلوار ولیعصر، خیابان جانبازان', phone: '۰۱۷-۳۲۲۳۴۵۶۷', mobile: '۰۹۱۱-۷۸۹-۰۱۲۳' },
+    ],
+  },
+  {
+    isoCode: 'IR-24',
+    provinceName: 'استان همدان',
+    representatives: [
+      { id: 'hmd-1', name: 'بیژن همدانی', company: 'نمایندگی کلایبرگ همدان', address: 'همدان، خیابان بوعلی، روبه‌روی دانشگاه', phone: '۰۸۱-۳۸۲۳۴۵۶۷' },
+    ],
+  },
+  {
+    isoCode: 'IR-15',
+    provinceName: 'استان لرستان',
+    representatives: [
+      { id: 'lor-1', name: 'شاهین لرستانی', company: 'پخش لوازم خانگی لرستان', address: 'خرم‌آباد، بلوار شهید چمران، کوچه ۵', phone: '۰۶۶-۳۳۳۲۱۲۳۴' },
+    ],
+  },
+  {
+    isoCode: 'IR-16',
+    provinceName: 'استان ایلام',
+    representatives: [
+      { id: 'ilm-1', name: 'سیاوش ایلامی', company: 'فروشگاه آشپزخانه ایلام', address: 'ایلام، خیابان انقلاب، مجتمع تجاری مروارید', phone: '۰۸۴-۳۲۲۳۴۵۶۷' },
+    ],
+  },
+  {
+    isoCode: 'IR-02',
+    provinceName: 'استان بوشهر',
+    representatives: [
+      { id: 'bsh-1', name: 'آرش بوشهری', company: 'نمایندگی کلایبرگ بوشهر', address: 'بوشهر، خیابان مدرس، پلاک ۱۲۳', phone: '۰۷۷-۳۳۴۵۶۷۸۹', mobile: '۰۹۱۷-۴۵۶-۷۸۹۰' },
+    ],
+  },
+  {
+    isoCode: 'IR-18',
+    provinceName: 'استان هرمزگان',
+    representatives: [
+      { id: 'hrm-1', name: 'ناصر هرمزگانی', company: 'نمایندگی کلایبرگ بندرعباس', address: 'بندرعباس، بلوار امام خمینی، کوچه گل‌محمدی', phone: '۰۷۶-۳۳۲۲۳۴۵۶' },
+    ],
+  },
+  {
+    isoCode: 'IR-14',
+    provinceName: 'استان سیستان و بلوچستان',
+    representatives: [
+      { id: 'sbl-1', name: 'جمیله بلوچ', company: 'فروشگاه آشپزخانه زاهدان', address: 'زاهدان، خیابان شریعتی، نزدیک میدان آزادی', phone: '۰۵۴-۳۳۲۳۴۵۶۷' },
+    ],
+  },
+  {
+    isoCode: 'IR-28',
+    provinceName: 'استان خراسان شمالی',
+    representatives: [
+      { id: 'khn-1', name: 'اکبر بجنوردی', company: 'نمایندگی کلایبرگ بجنورد', address: 'بجنورد، خیابان طالقانی، کوچه ۸', phone: '۰۵۸-۳۲۲۳۴۵۶۷' },
+    ],
+  },
+  {
+    isoCode: 'IR-29',
+    provinceName: 'استان خراسان جنوبی',
+    representatives: [
+      { id: 'khj-1', name: 'زینب بیرجندی', company: 'فروشگاه لوازم خانگی بیرجند', address: 'بیرجند، خیابان مدرس، مجتمع تجاری خلیج‌فارس', phone: '۰۵۶-۳۲۲۱۲۳۴۵' },
+    ],
+  },
+  {
+    isoCode: 'IR-21',
+    provinceName: 'استان آذربایجان غربی',
+    representatives: [
+      { id: 'azw-1', name: 'وحید ارومی', company: 'نمایندگی کلایبرگ ارومیه', address: 'ارومیه، خیابان شهریار، پلاک ۵۵', phone: '۰۴۴-۳۲۳۳۴۵۶۷', mobile: '۰۹۱۴-۷۸۹-۰۱۲۳' },
+    ],
+  },
+  {
+    isoCode: 'IR-01',
+    provinceName: 'استان اردبیل',
+    representatives: [
+      { id: 'ard-1', name: 'صمد اردبیلی', company: 'نمایندگی کلایبرگ اردبیل', address: 'اردبیل، خیابان امام، کوچه ملا باشی', phone: '۰۴۵-۳۳۴۵۶۷۸۹' },
+    ],
+  },
+  {
+    isoCode: 'IR-11',
+    provinceName: 'استان کردستان',
+    representatives: [
+      { id: 'krd-1', name: 'هیوا کردستانی', company: 'فروشگاه آشپزخانه کردستان', address: 'سنندج، بلوار پاسداران، مجتمع تجاری ارس', phone: '۰۸۷-۳۳۲۲۱۲۳۴' },
+    ],
+  },
+  {
+    isoCode: 'IR-17',
+    provinceName: 'استان چهارمحال و بختیاری',
+    representatives: [
+      { id: 'chb-1', name: 'فرهاد بختیاری', company: 'نمایندگی کلایبرگ شهرکرد', address: 'شهرکرد، خیابان هراتی، پلاک ۱۲', phone: '۰۳۸-۳۲۳۱۲۳۴۵' },
+    ],
+  },
+  {
+    isoCode: 'IR-12',
+    provinceName: 'استان خراسان',
+    representatives: [],
+  },
+  {
+    isoCode: 'IR-00',
+    provinceName: 'استان مرکزی',
+    representatives: [
+      { id: 'mrk-1', name: 'غلامرضا مرکزی', company: 'نمایندگی کلایبرگ اراک', address: 'اراک، خیابان شریعتی، کوچه نیلوفر', phone: '۰۸۶-۳۲۲۳۴۵۶۷' },
+    ],
+  },
+  {
+    isoCode: 'IR-26',
+    provinceName: 'استان یزد',
+    representatives: [
+      { id: 'yzd-1', name: 'حمید یزدی', company: 'نمایندگی کلایبرگ یزد', address: 'یزد، بلوار دانشجو، نبش خیابان فرهنگ', phone: '۰۳۵-۳۶۲۳۴۵۶۷', mobile: '۰۹۱۳-۸۹۰-۱۲۳۴' },
+    ],
+  },
+  {
+    isoCode: 'IR-09',
+    provinceName: 'استان زنجان',
+    representatives: [
+      { id: 'znj-1', name: 'بابک زنجانی', company: 'فروشگاه آشپزخانه زنجان', address: 'زنجان، خیابان مدرس، مجتمع تجاری ستاره', phone: '۰۲۴-۳۳۴۳۴۵۶۷' },
+    ],
+  },
 ]
