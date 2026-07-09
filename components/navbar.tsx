@@ -49,9 +49,18 @@ export function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center h-20">
+          <div className="flex items-center justify-between h-20">
+            {/* Mobile menu button */}
+            <button
+              className="lg:hidden p-2 text-foreground/70 hover:text-foreground transition-colors"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="منوی موبایل"
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+
             {/* Desktop Nav - right side */}
-            <nav className="hidden lg:flex items-center gap-8 text-sm flex-1">
+            <nav className="hidden lg:flex items-center gap-8 text-sm">
               {navLinks.map((link) =>
                 link.children ? (
                   <div key={link.href} className="relative group">
@@ -99,8 +108,8 @@ export function Navbar() {
               )}
             </nav>
 
-            {/* Logo - center on desktop / right-aligned on mobile */}
-            <Link href="/" className="lg:absolute lg:left-1/2 lg:-translate-x-1/2 ml-auto lg:ml-0">
+            {/* Logo - center */}
+            <Link href="/" className="absolute right-1/2 translate-x-1/2">
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.2 }}
@@ -115,8 +124,8 @@ export function Navbar() {
               </motion.div>
             </Link>
 
-            {/* CTA - left side on desktop */}
-            <div className="hidden lg:flex flex-1 justify-end">
+            {/* CTA - left side */}
+            <div className="hidden lg:block">
               <Link
                 href="/contact"
                 className="px-5 py-2.5 text-sm font-medium border border-gold text-gold hover:bg-gold hover:text-background transition-all duration-300 rounded-full"
@@ -125,14 +134,8 @@ export function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile menu button - leftmost */}
-            <button
-              className="lg:hidden p-2 ml-2 text-foreground/70 hover:text-foreground transition-colors"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="منوی موبایل"
-            >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
+            {/* Mobile logo spacer */}
+            <div className="lg:hidden w-8" />
           </div>
         </div>
       </motion.header>
