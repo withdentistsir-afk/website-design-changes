@@ -1,21 +1,12 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { useRouter } from "next/navigation"
+import { useRef } from "react"
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { Search } from "lucide-react"
+import { HeroSearch } from "@/components/hero-search"
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null)
-  const router = useRouter()
-  const [query, setQuery] = useState("")
-
-  function handleSearch(e: React.FormEvent) {
-    e.preventDefault()
-    const q = query.trim()
-    router.push(q ? `/products?search=${encodeURIComponent(q)}` : "/products")
-  }
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -75,36 +66,8 @@ export function Hero() {
           کنید
         </motion.h1>
 
-        {/* Professional search box */}
-        <motion.form
-          onSubmit={handleSearch}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl mx-auto"
-          role="search"
-        >
-          <div className="group flex items-center gap-2 bg-card/80 backdrop-blur-xl border border-border rounded-full p-2 pr-6 shadow-2xl focus-within:border-gold/60 transition-colors duration-300">
-            <Search size={20} className="text-muted-foreground shrink-0 group-focus-within:text-gold transition-colors" />
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="جستجو در هود، اجاق گاز، سینک، فر ..."
-              aria-label="جستجوی محصولات"
-              className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground text-sm sm:text-base outline-none py-2"
-            />
-            <button
-              type="submit"
-              className="shrink-0 px-6 py-3 bg-gold text-background font-semibold text-sm rounded-full hover:bg-gold-light transition-colors duration-300"
-            >
-              جستجو
-            </button>
-          </div>
-          <p className="text-xs text-foreground/40 mt-4">
-            بیش از ۱۰۰ محصول در ۵ دسته‌بندی — هود، اجاق گاز، سینک، فر و ماکروویو
-          </p>
-        </motion.form>
+        {/* Advanced search */}
+        <HeroSearch />
       </motion.div>
 
       {/* Scroll indicator */}
