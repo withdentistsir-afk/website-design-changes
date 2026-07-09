@@ -9,6 +9,7 @@ import { StatsSection } from "@/components/sections/stats-section"
 import { AwardsSection } from "@/components/sections/awards-section"
 import { ContactCTA } from "@/components/sections/contact-cta"
 import { ParallaxSection } from "@/components/parallax-section"
+import { ProductComparison } from "@/components/sections/product-comparison"
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
       <ParallaxSection>
         <FeaturedProducts />
       </ParallaxSection>
+      <ProductComparison />
       <AboutPreview />
       <StatsSection />
       <ParallaxSection>
