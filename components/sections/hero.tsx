@@ -18,7 +18,7 @@ export function Hero() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05])
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background w-full">
       {/* Background image with parallax */}
       <motion.div
         style={{ y, scale }}
@@ -40,7 +40,7 @@ export function Hero() {
       {/* Content */}
       <motion.div
         style={{ opacity }}
-        className="relative z-10 text-center max-w-5xl mx-auto px-6"
+        className="relative z-10 text-center w-full max-w-5xl mx-auto px-5 sm:px-6 overflow-x-hidden"
       >
         {/* Eyebrow */}
         <motion.div
@@ -59,7 +59,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="text-2xl sm:text-4xl font-black text-foreground leading-tight tracking-tight text-balance mb-8"
+          className="text-xl sm:text-4xl font-black text-foreground leading-tight tracking-tight text-balance mb-8 w-full"
         >
           محصول مورد نظر خود را
           <span className="text-gold"> جستجو </span>
