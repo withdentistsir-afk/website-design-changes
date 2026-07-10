@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className="bg-background">
-      <body className="font-sans antialiased bg-background text-foreground pb-[64px] lg:pb-0">
+      <body className="font-sans antialiased bg-background text-foreground pb-24 lg:pb-0">
         {children}
         <MobileBottomNav />
       </body>
