@@ -18,13 +18,13 @@ export function MobileBottomNav() {
 
   return (
     <nav
-      className="fixed bottom-4 inset-x-0 z-50 lg:hidden flex justify-center px-6"
-      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+      className="fixed inset-x-5 z-50 lg:hidden"
+      style={{ bottom: "20px" }}
       aria-label="منوی پایین موبایل"
     >
       <ul
-        className="flex items-center justify-around w-full max-w-sm bg-card/95 backdrop-blur-xl border border-border rounded-2xl px-2 py-2"
-        style={{ boxShadow: "0 4px 32px 0 rgba(86, 181, 190, 0.18), 0 1px 8px 0 rgba(86, 181, 190, 0.08)" }}
+        className="flex items-center justify-around w-full bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl px-1 py-1.5"
+        style={{ boxShadow: "0 0 0 1px rgba(86,181,190,0.2), 0 0 30px 0 rgba(86,181,190,0.35), 0 8px 24px 0 rgba(0,0,0,0.5)" }}
       >
         {mobileNavItems.map((item) => {
           const Icon = item.icon
