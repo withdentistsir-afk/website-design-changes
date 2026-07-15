@@ -109,8 +109,8 @@ export function Navbar() {
               )}
             </nav>
 
-            {/* Logo - center */}
-            <Link href="/" className="absolute right-1/2 translate-x-1/2" aria-label="کلایبرگ">
+            {/* Logo - center (mobile only) */}
+            <Link href="/" className="lg:hidden absolute right-1/2 translate-x-1/2" aria-label="کلایبرگ">
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.2 }}
