@@ -17,7 +17,7 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://instagram.com/clayberg.ir"
+                href="https://instagram.com/clayberg_kitchen"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold transition-colors"
@@ -77,13 +77,13 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={15} className="text-gold mt-0.5 shrink-0" />
                 <span className="text-sm text-muted-foreground leading-relaxed">
-                  ایران، تهران
+                  شهرک صنعتی خاوران
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={15} className="text-gold shrink-0" />
-                <a href="tel:02100000000" className="text-sm text-muted-foreground hover:text-foreground transition-colors" dir="ltr">
-                  ۰۲۱-XXXXXXXX
+                <a href="tel:02133285181" className="text-sm text-muted-foreground hover:text-foreground transition-colors" dir="ltr">
+                  ۰۲۱-۳۳۲۸۵۱۸۱
                 </a>
               </li>
               <li className="flex items-center gap-3">

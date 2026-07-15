@@ -45,7 +45,7 @@ export function ContactCTA() {
                 <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
               </Link>
               <a
-                href="tel:02100000000"
+                href="tel:02133285181"
                 className="flex items-center gap-3 px-8 py-4 border border-foreground/20 text-foreground/80 font-medium text-sm rounded-full hover:border-foreground hover:text-foreground transition-all duration-300"
               >
                 <Phone size={15} />
