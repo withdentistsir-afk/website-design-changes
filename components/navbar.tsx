@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, ChevronDown } from "lucide-react"
 
@@ -109,18 +110,20 @@ export function Navbar() {
             </nav>
 
             {/* Logo - center */}
-            <Link href="/" className="absolute right-1/2 translate-x-1/2">
+            <Link href="/" className="absolute right-1/2 translate-x-1/2" aria-label="کلایبرگ">
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.2 }}
-                className="flex flex-col items-center"
+                className="flex items-center"
               >
-                <span className="text-2xl font-black tracking-widest text-foreground leading-none">
-                  CLAYBERG
-                </span>
-                <span className="text-[10px] tracking-[0.4em] text-gold font-medium mt-0.5">
-                  کلایبرگ
-                </span>
+                <Image
+                  src="/images/clayberg-logo.png"
+                  alt="کلایبرگ"
+                  width={140}
+                  height={70}
+                  priority
+                  className="h-9 w-auto"
+                />
               </motion.div>
             </Link>
 

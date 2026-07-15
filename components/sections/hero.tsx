@@ -42,6 +42,23 @@ export function Hero() {
         style={{ opacity }}
         className="relative z-10 text-center w-full max-w-5xl mx-auto px-5 sm:px-6 overflow-x-hidden"
       >
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="flex justify-center mb-4"
+        >
+          <Image
+            src="/images/clayberg-logo.png"
+            alt="کلایبرگ"
+            width={220}
+            height={110}
+            priority
+            className="w-40 sm:w-56 h-auto"
+          />
+        </motion.div>
+
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
