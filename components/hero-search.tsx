@@ -154,23 +154,24 @@ export function HeroSearch() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
-        className="flex items-center gap-2 overflow-x-auto pb-3 scrollbar-hide justify-center"
+        className="flex items-center gap-2 overflow-x-auto pb-3 scrollbar-hide sm:justify-center px-1"
+        style={{ WebkitOverflowScrolling: "touch" }}
       >
         <button
           onClick={() => setActiveCategory("all")}
-          className={`shrink-0 px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border ${
+          className={`shrink-0 px-3 sm:px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border ${
             activeCategory === "all"
               ? "bg-gold text-background border-gold"
               : "border-foreground/20 text-foreground/60 hover:border-foreground/50 hover:text-foreground/90 bg-transparent"
           }`}
         >
-          همه محصولات
+          همه
         </button>
         {categories.map((cat) => (
           <button
             key={cat.id}
             onClick={() => setActiveCategory(cat.id as ProductCategory)}
-            className={`shrink-0 px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border ${
+            className={`shrink-0 px-3 sm:px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border ${
               activeCategory === cat.id
                 ? "bg-gold text-background border-gold"
                 : "border-foreground/20 text-foreground/60 hover:border-foreground/50 hover:text-foreground/90 bg-transparent"
@@ -189,12 +190,12 @@ export function HeroSearch() {
         transition={{ delay: 0.75, duration: 0.7 }}
       >
         <div
-          className={`flex items-center gap-3 bg-card/85 backdrop-blur-2xl border rounded-2xl px-5 py-3 shadow-2xl transition-all duration-300 ${
+          className={`flex items-center gap-2 sm:gap-3 bg-card/85 backdrop-blur-2xl border rounded-2xl px-3 sm:px-5 py-2.5 sm:py-3 shadow-2xl transition-all duration-300 ${
             focused || open ? "border-gold/60 shadow-[0_0_0_3px_rgba(86,181,190,0.12)]" : "border-white/10"
           }`}
         >
           <Search
-            size={20}
+            size={18}
             className={`shrink-0 transition-colors duration-200 ${focused ? "text-gold" : "text-muted-foreground"}`}
           />
           <input
@@ -209,9 +210,9 @@ export function HeroSearch() {
             onChange={(e) => { setQuery(e.target.value); setActiveIndex(-1); setOpen(true) }}
             onFocus={() => { setFocused(true); setOpen(true) }}
             onKeyDown={handleKeyDown}
-            placeholder="جستجوی محصول، مدل یا ویژگی ..."
+            placeholder="جستجوی محصول یا مدل ..."
             aria-label="جستجوی محصولات"
-            className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground text-sm sm:text-base outline-none py-1 min-w-0"
+            className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground text-sm outline-none py-1 min-w-0"
             autoComplete="off"
             spellCheck={false}
           />
@@ -230,9 +231,17 @@ export function HeroSearch() {
               </motion.button>
             )}
           </AnimatePresence>
+          {/* Mobile: icon-only button / Desktop: text button */}
           <button
             type="submit"
-            className="shrink-0 px-5 py-2.5 bg-gold text-background font-semibold text-sm rounded-xl hover:bg-gold-light active:scale-95 transition-all duration-200"
+            aria-label="جستجو"
+            className="shrink-0 sm:hidden w-9 h-9 flex items-center justify-center bg-gold text-background rounded-xl hover:bg-gold-light active:scale-95 transition-all duration-200"
+          >
+            <Search size={16} />
+          </button>
+          <button
+            type="submit"
+            className="shrink-0 hidden sm:flex px-5 py-2.5 bg-gold text-background font-semibold text-sm rounded-xl hover:bg-gold-light active:scale-95 transition-all duration-200"
           >
             جستجو
           </button>
@@ -303,7 +312,7 @@ export function HeroSearch() {
             {normalized && results.length === 0 && (
               <div className="px-4 py-6 text-center">
                 <p className="text-sm text-muted-foreground mb-1">نتیجه‌ای یافت نشد</p>
-                <p className="text-xs text-muted-foreground/60">عبارت دیگری امتحان کنید</p>
+                <p className="text-xs text-muted-foreground/60">ع��ارت دیگری امتحان کنید</p>
               </div>
             )}
 

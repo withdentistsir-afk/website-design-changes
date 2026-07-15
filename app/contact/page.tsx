@@ -10,7 +10,7 @@ const contactItems = [
   {
     icon: Phone,
     title: "تلفن",
-    lines: ["۰۲۱-XXXXXXXX", "۰۲۱-XXXXXXXX"],
+    lines: ["۰۲۱-۳۳۲۸۵۱۸۱"],
   },
   {
     icon: Mail,
@@ -20,7 +20,7 @@ const contactItems = [
   {
     icon: MapPin,
     title: "آدرس",
-    lines: ["ایران، تهران"],
+    lines: ["شهرک صنعتی خاوران"],
   },
   {
     icon: Clock,
