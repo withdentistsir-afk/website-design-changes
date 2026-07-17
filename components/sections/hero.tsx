@@ -29,6 +29,8 @@ export function Hero() {
           alt="هود شومینه‌ای کلایبرگ"
           fill
           priority
+          fetchPriority="high"
+          quality={75}
           className="object-cover"
           sizes="100vw"
         />
@@ -46,7 +48,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ delay: 0, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="flex justify-center mb-4"
         >
           <Image
@@ -55,6 +57,8 @@ export function Hero() {
             width={220}
             height={110}
             priority
+            fetchPriority="high"
+            quality={85}
             className="w-40 sm:w-56 h-auto"
           />
         </motion.div>
@@ -63,7 +67,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ delay: 0.05, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="inline-flex items-center gap-2 mb-6"
         >
           <span className="w-12 h-px bg-gold" />
@@ -75,7 +79,7 @@ export function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-xl sm:text-4xl font-black text-foreground leading-tight tracking-tight text-balance mb-8 w-full"
         >
           محصول مورد نظر خود را
