@@ -39,8 +39,10 @@ export function ParallaxSection({
           src={image}
           alt=""
           fill
+          loading="lazy"
           className="object-cover"
           sizes="100vw"
+          quality={40}
         />
       </motion.div>
 
