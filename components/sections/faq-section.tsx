@@ -168,25 +168,28 @@ export function FaqSection() {
         </motion.div>
 
         {/* Side-by-side columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
-          {/* Divider line between columns on desktop */}
-          <FaqColumn
-            icon={ShoppingBag}
-            label="خرید و سفارش"
-            faqs={purchaseFaqs}
-            accentClass="bg-gold/10 text-gold"
-            inView={inView}
-            delay={0.1}
-          />
-          <div className="hidden lg:block w-px bg-border/50 mx-2" />
-          <FaqColumn
-            icon={Wrench}
-            label="گارانتی و خدمات"
-            faqs={warrantyFaqs}
-            accentClass="bg-gold/10 text-gold"
-            inView={inView}
-            delay={0.2}
-          />
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-0">
+          <div className="flex-1">
+            <FaqColumn
+              icon={ShoppingBag}
+              label="خرید و سفارش"
+              faqs={purchaseFaqs}
+              accentClass="bg-gold/10 text-gold"
+              inView={inView}
+              delay={0.1}
+            />
+          </div>
+          <div className="hidden lg:block w-px bg-border/50 mx-8 shrink-0" />
+          <div className="flex-1">
+            <FaqColumn
+              icon={Wrench}
+              label="گارانتی و خدمات"
+              faqs={warrantyFaqs}
+              accentClass="bg-gold/10 text-gold"
+              inView={inView}
+              delay={0.2}
+            />
+          </div>
         </div>
 
       </div>
