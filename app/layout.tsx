@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { MobileBottomNav } from '@/components/mobile-bottom-nav'
+import { ThemeProvider } from '@/components/theme-provider'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 export const metadata: Metadata = {
   title: 'کلایبرگ | پیشرو در نوآوری لوازم آشپزخانه',
@@ -28,8 +30,11 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" className="bg-background">
       <body className="font-sans antialiased bg-background text-foreground pb-24 lg:pb-0">
-        {children}
-        <MobileBottomNav />
+        <ThemeProvider>
+          {children}
+          <MobileBottomNav />
+          <ThemeToggle />
+        </ThemeProvider>
       </body>
     </html>
   )
