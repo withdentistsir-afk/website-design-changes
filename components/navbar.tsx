@@ -20,6 +20,7 @@ const navLinks = [
   },
   { href: "/about", label: "خدمات" },
   { href: "/about", label: "درباره ما" },
+  { href: "/compare", label: "مقایسه محصولات" },
   { href: "/gallery", label: "مقالات" },
   { href: "/contact", label: "تماس با ما" },
 ]
