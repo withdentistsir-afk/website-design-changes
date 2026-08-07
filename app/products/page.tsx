@@ -561,7 +561,7 @@ function ProductsContent() {
   ───────────────────────────────────────────── */
   const DesktopLayout = (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      <div className="hidden lg:block"><Navbar /></div>
       <section className="pt-36 pb-16 px-6 border-b border-border">
         <div className="max-w-7xl mx-auto" ref={headerRef}>
           <motion.div
@@ -675,7 +675,7 @@ function ProductsContent() {
         </div>
       </section>
 
-      <Footer />
+      <div className="hidden lg:block"><Footer /></div>
     </main>
   )
 

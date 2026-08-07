@@ -31,7 +31,7 @@ export default function ProductDetailPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      <div className="hidden lg:block"><Navbar /></div>
 
       {/* Breadcrumb */}
       <div className="pt-28 px-6 pb-4 border-b border-border">
@@ -198,7 +198,7 @@ export default function ProductDetailPage() {
         </section>
       )}
 
-      <Footer />
+      <div className="hidden lg:block"><Footer /></div>
     </main>
   )
 }
