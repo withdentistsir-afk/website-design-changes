@@ -18,7 +18,6 @@ const navLinks = [
       { href: "/products?cat=microwave", label: "ماکروویو" },
     ],
   },
-  { href: "/about", label: "خدمات" },
   { href: "/about", label: "درباره ما" },
   { href: "/representatives", label: "نمایندگان" },
   { href: "/compare", label: "مقایسه محصولات" },
