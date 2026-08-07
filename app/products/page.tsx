@@ -73,6 +73,17 @@ function ProductsContent() {
     const cat = searchParams.get("cat")
     const sub = searchParams.get("sub")
     const q = searchParams.get("search")
+    const home = searchParams.get("home")
+
+    // ?home=1 → always reset to home view
+    if (home === "1") {
+      setMobileView("home")
+      setActive("all")
+      setActiveSub("all")
+      setSearch("")
+      return
+    }
+
     if (cat && categories.some((c) => c.id === cat)) {
       setActive(cat as ProductCategory)
       setMobileView("products")

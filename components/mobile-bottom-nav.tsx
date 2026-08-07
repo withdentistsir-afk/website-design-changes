@@ -1,20 +1,29 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useSearchParams, useRouter } from "next/navigation"
 import { motion } from "framer-motion"
-import { Home, Search, ArrowLeftRight, Phone, Info } from "lucide-react"
+import { Home, Grid2X2, ArrowLeftRight, Phone, Info } from "lucide-react"
+import { Suspense } from "react"
 
 const mobileNavItems = [
-  { href: "/",         label: "خانه",     icon: Home },
-  { href: "/products", label: "محصولات",  icon: Search },
-  { href: "/compare",  label: "مقایسه",   icon: ArrowLeftRight },
-  { href: "/about",    label: "درباره ما", icon: Info },
-  { href: "/contact",  label: "تماس",     icon: Phone },
+  { href: "/products?home=1", label: "خانه",     icon: Home },
+  { href: "/products",        label: "محصولات",  icon: Grid2X2 },
+  { href: "/compare",         label: "مقایسه",   icon: ArrowLeftRight },
+  { href: "/about",           label: "درباره ما", icon: Info },
+  { href: "/contact",         label: "تماس",     icon: Phone },
 ]
 
-export function MobileBottomNav() {
+function MobileBottomNavInner() {
   const pathname = usePathname()
+  const searchParams = useSearchParams()
+  const isHome = pathname === "/products" && searchParams.get("home") === "1"
+
+  const isActive = (href: string) => {
+    if (href === "/products?home=1") return isHome
+    if (href === "/products") return pathname === "/products" && !isHome
+    return pathname.startsWith(href)
+  }
 
   return (
     <nav
@@ -28,19 +37,16 @@ export function MobileBottomNav() {
       >
         {mobileNavItems.map((item) => {
           const Icon = item.icon
-          const isActive =
-            item.href === "/"
-              ? pathname === "/"
-              : pathname.startsWith(item.href)
+          const active = isActive(item.href)
 
           return (
             <li key={item.href} className="flex-1">
               <Link
                 href={item.href}
                 className="flex flex-col items-center gap-1 py-1 relative group"
-                aria-current={isActive ? "page" : undefined}
+                aria-current={active ? "page" : undefined}
               >
-                {isActive && (
+                {active && (
                   <motion.span
                     layoutId="mobile-nav-indicator"
                     className="absolute -top-2 inset-x-2 h-0.5 bg-gold rounded-full"
@@ -49,16 +55,10 @@ export function MobileBottomNav() {
                 )}
                 <Icon
                   size={19}
-                  className={`transition-colors duration-200 ${
-                    isActive ? "text-gold" : "text-muted-foreground group-hover:text-foreground"
-                  }`}
-                  strokeWidth={isActive ? 2.2 : 1.8}
+                  className={`transition-colors duration-200 ${active ? "text-gold" : "text-muted-foreground group-hover:text-foreground"}`}
+                  strokeWidth={active ? 2.2 : 1.8}
                 />
-                <span
-                  className={`text-[9px] font-medium transition-colors duration-200 ${
-                    isActive ? "text-gold" : "text-muted-foreground group-hover:text-foreground"
-                  }`}
-                >
+                <span className={`text-[9px] font-medium transition-colors duration-200 ${active ? "text-gold" : "text-muted-foreground group-hover:text-foreground"}`}>
                   {item.label}
                 </span>
               </Link>
@@ -67,5 +67,13 @@ export function MobileBottomNav() {
         })}
       </ul>
     </nav>
+  )
+}
+
+export function MobileBottomNav() {
+  return (
+    <Suspense fallback={null}>
+      <MobileBottomNavInner />
+    </Suspense>
   )
 }
