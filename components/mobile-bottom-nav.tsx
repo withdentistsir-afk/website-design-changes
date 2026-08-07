@@ -3,11 +3,11 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
-import { Home, Grid2X2, ArrowLeftRight, Phone, Info } from "lucide-react"
+import { Home, Search, ArrowLeftRight, Phone, Info } from "lucide-react"
 
 const mobileNavItems = [
   { href: "/", label: "خانه", icon: Home },
-  { href: "/products", label: "محصولات", icon: Grid2X2 },
+  { href: "/products", label: "جستجو", icon: Search },
   { href: "/compare", label: "مقایسه", icon: ArrowLeftRight },
   { href: "/about", label: "درباره ما", icon: Info },
   { href: "/contact", label: "تماس", icon: Phone },
