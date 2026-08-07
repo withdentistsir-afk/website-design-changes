@@ -4,35 +4,28 @@ import { useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion, useInView } from "framer-motion"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, ChevronLeft } from "lucide-react"
 
 const cats = [
   {
     id: "hood",
     label: "هود آشپزخانه",
-    description: "شومینه‌ای و مخفی با قدرت مکش ۸۵۰ m³/h",
     image: "/images/categories/hood.png",
   },
   {
     id: "hob",
     label: "اجاق گاز",
-    description: "صفحه شیشه‌ای و استیل با ۵ تا ۶ شعله",
     image: "/images/categories/hob.png",
-    count: "۴۰+ مدل",
   },
   {
     id: "sink",
     label: "سینک آشپزخانه",
-    description: "دست‌ساز، فانتزی و گرانیتی با ضمانت ۲ سال",
     image: "/images/categories/sink.png",
-    count: "۲۰+ مدل",
   },
   {
     id: "oven",
     label: "فر توکار",
-    description: "برقی با تا ۱۸ برنامه پخت، کلاس انرژی A",
     image: "/images/categories/oven.png",
-    count: "۵ مدل",
   },
 ]
 
@@ -41,37 +34,25 @@ export function CategoriesSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section className="py-28 bg-card">
+    <section className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div ref={ref} className="flex items-end justify-between mb-14">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              className="inline-flex items-center gap-2 mb-3"
-            >
-              <span className="w-8 h-px bg-gold" />
-              <span className="text-gold text-xs tracking-[0.35em] font-medium uppercase">دسته‌بندی‌ها</span>
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 }}
-              className="text-2xl sm:text-3xl font-black text-foreground"
-            >
-              خانواده محصولات
-            </motion.h2>
-          </div>
+        <div ref={ref} className="flex items-center justify-between mb-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            className="text-xl font-black text-foreground"
+          >
+            دسته‌بندی محصولات
+          </motion.h2>
           <motion.div
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.3 }}
-            className="hidden sm:block"
+            transition={{ delay: 0.2 }}
           >
             <Link
               href="/products"
-              className="flex items-center gap-2 text-sm text-gold hover:gap-3 transition-all duration-300"
+              className="flex items-center gap-1.5 text-sm text-gold hover:gap-2.5 transition-all duration-300"
             >
               مشاهده همه
               <ArrowLeft size={14} />
@@ -80,39 +61,38 @@ export function CategoriesSection() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {cats.map((cat, i) => (
             <motion.div
               key={cat.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 + i * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ delay: 0.05 + i * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               <Link href={`/products?cat=${cat.id}`} className="group block">
                 <div
-                  className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4 transition-shadow duration-500"
-                  style={{ boxShadow: 'var(--glow)' }}
-                  onMouseEnter={e => (e.currentTarget.style.boxShadow = 'var(--glow-hover)')}
-                  onMouseLeave={e => (e.currentTarget.style.boxShadow = 'var(--glow)')}
+                  className="relative aspect-square rounded-2xl overflow-hidden bg-card border border-border/50 transition-all duration-500 group-hover:border-gold/30"
+                  style={{ boxShadow: "var(--glow)" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "var(--glow-hover)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "var(--glow)")}
                 >
                   <Image
                     src={cat.image}
                     alt={cat.label}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-contain p-6 transition-transform duration-700 group-hover:scale-108"
+                    sizes="(max-width: 640px) 50vw, 25vw"
                   />
-                  <div className="absolute inset-0 bg-background/30 group-hover:bg-background/10 transition-colors duration-500" />
-                  <div className="absolute bottom-4 right-4">
-                    <span className="text-[11px] tracking-widest text-foreground/60 bg-background/50 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                      {cat.count}
+                  {/* Bottom label */}
+                  <div className="absolute bottom-0 inset-x-0 flex items-center justify-between px-4 py-3 bg-gradient-to-t from-background/90 to-transparent">
+                    <span className="text-sm font-bold text-foreground group-hover:text-gold transition-colors duration-300">
+                      {cat.label}
                     </span>
+                    <div className="w-7 h-7 rounded-full border border-border flex items-center justify-center group-hover:border-gold group-hover:text-gold transition-all duration-300">
+                      <ChevronLeft size={13} />
+                    </div>
                   </div>
                 </div>
-                <h3 className="font-bold text-foreground text-lg mb-1 group-hover:text-gold transition-colors duration-300">
-                  {cat.label}
-                </h3>
-                <p className="text-sm text-muted-foreground">{cat.description}</p>
               </Link>
             </motion.div>
           ))}

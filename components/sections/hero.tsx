@@ -13,77 +13,87 @@ export function Hero() {
     offset: ["start start", "end start"],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
-  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05])
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "25%"])
+  const opacity = useTransform(scrollYProgress, [0, 0.65], [1, 0])
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.04])
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background w-full">
-      {/* Background image with parallax */}
-      <motion.div
-        style={{ y, scale }}
-        className="absolute inset-0 z-0"
-      >
+    <section
+      ref={ref}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background w-full"
+    >
+      {/* Background image */}
+      <motion.div style={{ y, scale }} className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-hood.png"
-          alt="هود شومینه‌ای کلایبرگ"
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%207%2C%202026%2C%2007_43_10%20PM-KzfJR3ZUrFkCVENLteYklBBwYA4lxv.png"
+          alt="آشپزخانه مدرن کلایبرگ"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
+          crossOrigin="anonymous"
         />
-        <div className="absolute inset-0 bg-background/70" />
-        {/* Cinematic vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.8)_100%)]" />
+        {/* Dark gradient overlay - heavier at top and bottom, lighter in center */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/50 to-background/80" />
+        {/* Side vignettes */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_40%,rgba(0,0,0,0.6)_100%)]" />
       </motion.div>
 
       {/* Content */}
       <motion.div
         style={{ opacity }}
-        className="relative z-10 text-center w-full max-w-5xl mx-auto px-5 sm:px-6 overflow-x-hidden"
+        className="relative z-10 text-center w-full max-w-3xl mx-auto px-5 sm:px-6"
       >
-        {/* Logo */}
+        {/* Logo above search */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex justify-center mb-4"
+          transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="flex justify-center mb-8"
         >
           <Image
             src="/images/clayberg-logo.png"
             alt="کلایبرگ"
-            width={220}
-            height={110}
+            width={200}
+            height={100}
             priority
-            className="w-40 sm:w-56 h-auto"
+            className="w-36 sm:w-48 h-auto"
           />
         </motion.div>
 
         {/* Eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 mb-6"
+          transition={{ delay: 0.25, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="text-gold text-sm tracking-[0.2em] font-medium mb-4"
         >
-          <span className="w-12 h-px bg-gold" />
-          <span className="text-gold text-xs tracking-[0.4em] font-medium uppercase">Since 2009</span>
-          <span className="w-12 h-px bg-gold" />
-        </motion.div>
+          تجربه‌ای متفاوت از آشپزی
+        </motion.p>
 
         {/* Heading */}
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="text-xl sm:text-4xl font-black text-foreground leading-tight tracking-tight text-balance mb-8 w-full"
+          transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-3xl sm:text-5xl font-black text-foreground leading-snug tracking-tight text-balance mb-3"
         >
-          محصول مورد نظر خود را
-          <span className="text-gold"> جستجو </span>
+          محصول مورد نظر خود را{" "}
+          <span className="text-gold">جستجو</span>{" "}
           کنید
         </motion.h1>
 
-        {/* Advanced search */}
+        {/* Sub */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.55, duration: 0.7 }}
+          className="text-sm text-foreground/55 mb-10"
+        >
+          کیفیت بالا، طراحی ماندگار، عملکرد بی‌نقص
+        </motion.p>
+
+        {/* Search */}
         <HeroSearch />
       </motion.div>
 
@@ -91,11 +101,11 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
+        transition={{ delay: 1.6, duration: 1 }}
         className="absolute bottom-10 right-1/2 translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] tracking-[0.3em] text-foreground/40 uppercase">اسکرول</span>
-        <div className="w-px h-12 bg-foreground/20 relative overflow-hidden">
+        <span className="text-[10px] tracking-[0.3em] text-foreground/35 uppercase">اسکرول</span>
+        <div className="w-px h-10 bg-foreground/15 relative overflow-hidden">
           <motion.div
             className="w-full bg-gold absolute top-0"
             style={{ height: "40%" }}

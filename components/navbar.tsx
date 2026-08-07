@@ -2,12 +2,10 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, ChevronDown } from "lucide-react"
 
 const navLinks = [
-  { href: "/", label: "خانه" },
   {
     href: "/products",
     label: "محصولات",
@@ -19,10 +17,9 @@ const navLinks = [
       { href: "/products?cat=microwave", label: "ماکروویو" },
     ],
   },
-  { href: "/compare", label: "مقایسه محصولات" },
+  { href: "/about", label: "خدمات" },
   { href: "/about", label: "درباره ما" },
-  { href: "/gallery", label: "گالری" },
-  { href: "/representatives", label: "نمایندگان" },
+  { href: "/gallery", label: "مقالات" },
   { href: "/contact", label: "تماس با ما" },
 ]
 
@@ -51,7 +48,7 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Mobile menu button */}
+            {/* Mobile: hamburger */}
             <button
               className="lg:hidden p-2 text-foreground/70 hover:text-foreground transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -60,11 +57,11 @@ export function Navbar() {
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
 
-            {/* Desktop Nav - right side */}
+            {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-8 text-sm">
               {navLinks.map((link) =>
                 link.children ? (
-                  <div key={link.href} className="relative group">
+                  <div key={link.href + link.label} className="relative group">
                     <button
                       className="flex items-center gap-1 text-foreground/70 hover:text-foreground transition-colors font-medium"
                       onMouseEnter={() => setMegaOpen(true)}
@@ -99,7 +96,7 @@ export function Navbar() {
                   </div>
                 ) : (
                   <Link
-                    key={link.href}
+                    key={link.href + link.label}
                     href={link.href}
                     className="text-foreground/70 hover:text-foreground transition-colors font-medium"
                   >
@@ -109,35 +106,17 @@ export function Navbar() {
               )}
             </nav>
 
-            {/* Logo - center (mobile only) */}
-            <Link href="/" className="lg:hidden absolute right-1/2 translate-x-1/2" aria-label="کلایبرگ">
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.2 }}
-                className="flex items-center"
-              >
-                <Image
-                  src="/images/clayberg-logo.png"
-                  alt="کلایبرگ"
-                  width={140}
-                  height={70}
-                  priority
-                  className="h-9 w-auto"
-                />
-              </motion.div>
-            </Link>
-
-            {/* CTA - left side */}
+            {/* CTA */}
             <div className="hidden lg:block">
               <Link
                 href="/contact"
                 className="px-5 py-2.5 text-sm font-medium border border-gold text-gold hover:bg-gold hover:text-background transition-all duration-300 rounded-full"
               >
-                تماس با ما
+                ثبت درخواست
               </Link>
             </div>
 
-            {/* Mobile logo spacer */}
+            {/* Mobile spacer */}
             <div className="lg:hidden w-8" />
           </div>
         </div>
@@ -157,7 +136,7 @@ export function Navbar() {
               <nav className="flex flex-col gap-2 flex-1">
                 {navLinks.map((link, i) => (
                   <motion.div
-                    key={link.href}
+                    key={link.href + link.label + i}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.07 }}
@@ -191,7 +170,7 @@ export function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="w-full py-4 text-center font-semibold bg-gold text-background rounded-full text-lg mt-6"
               >
-                تماس با ما
+                ثبت درخواست
               </Link>
             </div>
           </motion.div>
