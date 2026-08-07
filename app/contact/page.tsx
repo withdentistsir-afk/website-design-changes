@@ -42,7 +42,7 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      <div className="hidden lg:block"><Navbar /></div>
 
       {/* Header */}
       <section className="pt-36 pb-16 px-6 border-b border-border">
@@ -212,7 +212,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Footer />
+      <div className="hidden lg:block"><Footer /></div>
     </main>
   )
 }

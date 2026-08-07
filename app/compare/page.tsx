@@ -272,7 +272,7 @@ export default function ComparePage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      <div className="hidden lg:block"><Navbar /></div>
 
       {/* Page Header */}
       <section className="pt-36 pb-12 px-6 border-b border-border bg-card">
@@ -395,7 +395,7 @@ export default function ComparePage() {
                 <div className="flex items-center gap-2 mb-6">
                   <SlidersHorizontal size={16} className="text-gold" />
                   <span className="text-sm font-bold text-foreground">جدول مقایسه</span>
-                  <span className="text-xs text-muted-foreground">({selected.length} محصول انتخاب شده)</span>
+                  <span className="text-xs text-muted-foreground">({selected.length} محصول انتخا�� شده)</span>
                 </div>
 
                 {/* Specs table */}
@@ -577,7 +577,7 @@ export default function ComparePage() {
         </div>
       </section>
 
-      <Footer />
+      <div className="hidden lg:block"><Footer /></div>
 
       <AnimatePresence>
         {pickerOpen && (

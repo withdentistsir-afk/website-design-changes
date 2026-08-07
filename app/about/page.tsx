@@ -36,7 +36,7 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      <div className="hidden lg:block"><Navbar /></div>
 
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-background">
@@ -180,7 +180,7 @@ export default function AboutPage() {
 
       <StatsSection />
       <ContactCTA />
-      <Footer />
+      <div className="hidden lg:block"><Footer /></div>
     </main>
   )
 }
