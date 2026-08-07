@@ -147,11 +147,9 @@ export function FaqSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section
-      ref={ref}
-      className="py-20 bg-surface border-t border-b"
-      style={{ borderColor: "rgba(86,181,190,0.4)" }}
-    >
+    <>
+    <div className="gold-line" />
+    <section ref={ref} className="py-20 bg-surface">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}
@@ -198,5 +196,7 @@ export function FaqSection() {
 
       </div>
     </section>
+    <div className="gold-line" />
+    </>
   )
 }

@@ -41,11 +41,9 @@ export function AboutPreview() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section
-      className="py-24 px-6 overflow-hidden bg-background border-b"
-      style={{ borderColor: "rgba(86,181,190,0.4)" }}
-      ref={ref}
-    >
+    <>
+    <div className="gold-line" />
+    <section className="py-24 px-6 overflow-hidden bg-background" ref={ref}>
       <div className="max-w-7xl mx-auto">
 
         {/* ── Top: label + heading + image in a magazine-style grid ── */}
@@ -172,5 +170,7 @@ export function AboutPreview() {
 
       </div>
     </section>
+    <div className="gold-line" />
+    </>
   )
 }
