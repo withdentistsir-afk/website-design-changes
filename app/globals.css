@@ -43,28 +43,30 @@
 /* Premium dark theme — Clayberg */
 :root {
   color-scheme: dark;
-  --background: oklch(0.1 0 0);
+  --background: oklch(0.14 0 0);
   --foreground: oklch(0.96 0 0);
-  --card: oklch(0.14 0 0);
+  --card: oklch(0.18 0 0);
   --card-foreground: oklch(0.96 0 0);
-  --popover: oklch(0.14 0 0);
+  --popover: oklch(0.18 0 0);
   --popover-foreground: oklch(0.96 0 0);
   --primary: oklch(0.96 0 0);
-  --primary-foreground: oklch(0.1 0 0);
-  --secondary: oklch(0.18 0 0);
+  --primary-foreground: oklch(0.14 0 0);
+  --secondary: oklch(0.22 0 0);
   --secondary-foreground: oklch(0.96 0 0);
-  --muted: oklch(0.18 0 0);
-  --muted-foreground: oklch(0.58 0 0);
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.62 0 0);
   --accent: #56b5be;
-  --accent-foreground: oklch(0.1 0 0);
+  --accent-foreground: oklch(0.14 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 12%);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
   --ring: #56b5be;
   --gold: #56b5be;
   --gold-light: #82cdd4;
-  --surface: oklch(0.16 0 0);
-  --surface-2: oklch(0.22 0 0);
+  --surface: oklch(0.21 0 0);
+  --surface-2: oklch(0.27 0 0);
+  --glow: 0 0 24px rgba(86,181,190,0.18), 0 2px 8px rgba(0,0,0,0.35);
+  --glow-hover: 0 0 36px rgba(86,181,190,0.28), 0 4px 16px rgba(0,0,0,0.4);
   --radius: 0.5rem;
 }
 
@@ -94,6 +96,8 @@
   --gold-light: #56b5be;
   --surface: oklch(0.95 0 0);
   --surface-2: oklch(0.91 0 0);
+  --glow: 0 0 20px rgba(58,154,163,0.12), 0 2px 8px rgba(0,0,0,0.08);
+  --glow-hover: 0 0 30px rgba(58,154,163,0.2), 0 4px 16px rgba(0,0,0,0.12);
   --radius: 0.5rem;
 }
 

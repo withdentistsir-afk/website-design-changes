@@ -71,7 +71,11 @@ export function AwardsSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 + i * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="group border border-border rounded-2xl bg-card overflow-hidden hover:border-gold/40 transition-colors duration-500"
+              className="group border border-border rounded-2xl bg-card overflow-hidden hover:border-gold/40 transition-all duration-500"
+              style={{ boxShadow: 'var(--glow)' }}
+              onMouseEnter={e => (e.currentTarget.style.boxShadow = 'var(--glow-hover)')}
+              onMouseLeave={e => (e.currentTarget.style.boxShadow = 'var(--glow)')}
+
             >
               <div className="relative aspect-square bg-surface overflow-hidden">
                 <Image

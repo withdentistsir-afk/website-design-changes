@@ -58,7 +58,12 @@ export function FeaturedProducts() {
               transition={{ delay: 0.1 + i * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
               <Link href={`/products/${product.id}`} className="group block">
-                <div className="relative aspect-square rounded-2xl overflow-hidden bg-surface mb-5">
+                <div
+                  className="relative aspect-square rounded-2xl overflow-hidden bg-surface mb-5 transition-shadow duration-500"
+                  style={{ boxShadow: 'var(--glow)' }}
+                  onMouseEnter={e => (e.currentTarget.style.boxShadow = 'var(--glow-hover)')}
+                  onMouseLeave={e => (e.currentTarget.style.boxShadow = 'var(--glow)')}
+                >
                   <Image
                     src={product.image}
                     alt={product.name}

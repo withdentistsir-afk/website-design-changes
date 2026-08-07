@@ -28,7 +28,7 @@ export function AboutPreview() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="relative order-2 lg:order-1"
           >
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden" style={{ boxShadow: 'var(--glow-hover)' }}>
               <Image
                 src="/images/about-factory.png"
                 alt="کارخانه کلایبرگ"

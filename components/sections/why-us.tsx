@@ -39,7 +39,12 @@ function PillarCard({ pillar, index }: { pillar: (typeof pillars)[0]; index: num
       transition={{ delay: index * 0.15, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       className="group"
     >
-      <div className="p-8 border border-border rounded-2xl bg-card hover:border-gold/40 transition-all duration-500 h-full">
+      <div
+        className="p-8 border border-border rounded-2xl bg-card hover:border-gold/40 transition-all duration-500 h-full"
+        style={{ boxShadow: 'var(--glow)' }}
+        onMouseEnter={e => (e.currentTarget.style.boxShadow = 'var(--glow-hover)')}
+        onMouseLeave={e => (e.currentTarget.style.boxShadow = 'var(--glow)')}
+      >
         <div className="w-12 h-12 rounded-xl bg-surface flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors duration-300">
           <pillar.icon size={20} className="text-gold" />
         </div>

@@ -89,7 +89,12 @@ export function CategoriesSection() {
               transition={{ delay: 0.1 + i * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
               <Link href={`/products?cat=${cat.id}`} className="group block">
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4">
+                <div
+                  className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4 transition-shadow duration-500"
+                  style={{ boxShadow: 'var(--glow)' }}
+                  onMouseEnter={e => (e.currentTarget.style.boxShadow = 'var(--glow-hover)')}
+                  onMouseLeave={e => (e.currentTarget.style.boxShadow = 'var(--glow)')}
+                >
                   <Image
                     src={cat.image}
                     alt={cat.label}
