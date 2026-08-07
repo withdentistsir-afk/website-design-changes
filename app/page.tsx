@@ -17,8 +17,8 @@ export default function HomePage() {
       <WhyKlaiberg />
       <FeaturedProducts />
       <FaqSection />
-      <AwardsSection />
       <AboutPreview />
+      <AwardsSection />
       <ArticlesStrip />
       <WhyUs />
       <Footer />
