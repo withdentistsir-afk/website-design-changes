@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, ChevronDown } from "lucide-react"
 
 const navLinks = [
+  { href: "/", label: "صفحه اصلی" },
   {
     href: "/products",
     label: "محصولات",
