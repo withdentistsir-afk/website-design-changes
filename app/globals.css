@@ -68,6 +68,34 @@
   --radius: 0.5rem;
 }
 
+/* Luxury dark theme — Clayberg */
+.luxury {
+  color-scheme: dark;
+  --background: oklch(0.11 0.008 60);
+  --foreground: oklch(0.95 0.025 80);
+  --card: oklch(0.15 0.01 60);
+  --card-foreground: oklch(0.95 0.025 80);
+  --popover: oklch(0.15 0.01 60);
+  --popover-foreground: oklch(0.95 0.025 80);
+  --primary: #c9a84c;
+  --primary-foreground: oklch(0.11 0.008 60);
+  --secondary: oklch(0.19 0.012 60);
+  --secondary-foreground: oklch(0.92 0.02 80);
+  --muted: oklch(0.19 0.012 60);
+  --muted-foreground: oklch(0.62 0.015 70);
+  --accent: #56b5be;
+  --accent-foreground: oklch(0.11 0.008 60);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 7%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: #c9a84c;
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --surface: oklch(0.17 0.01 60);
+  --surface-2: oklch(0.23 0.014 60);
+  --radius: 0.5rem;
+}
+
 /* Premium light theme — Clayberg */
 .light {
   color-scheme: light;
@@ -139,15 +167,25 @@
 .light ::-webkit-scrollbar-thumb {
   background: oklch(0.75 0 0);
 }
+.luxury ::-webkit-scrollbar-thumb {
+  background: oklch(0.35 0.04 60);
+}
 
 /* Selection color */
 ::selection {
   background: color-mix(in srgb, #56b5be 30%, transparent);
   color: oklch(0.96 0 0);
 }
+.luxury ::selection {
+  background: color-mix(in srgb, #c9a84c 35%, transparent);
+  color: oklch(0.95 0.025 80);
+}
 
 /* Accent divider */
 .gold-line {
   background: linear-gradient(90deg, transparent, #56b5be, transparent);
   height: 1px;
+}
+.luxury .gold-line {
+  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
 }

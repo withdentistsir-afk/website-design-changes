@@ -2,50 +2,49 @@
 
 import { createContext, useContext, useEffect, useState } from "react"
 
-type Theme = "dark" | "light"
+export type Theme = "dark" | "light" | "luxury"
 
 interface ThemeContextValue {
   theme: Theme
-  toggleTheme: () => void
+  setTheme: (theme: Theme) => void
 }
 
 const ThemeContext = createContext<ThemeContextValue>({
   theme: "dark",
-  toggleTheme: () => {},
+  setTheme: () => {},
 })
 
 export function useTheme() {
   return useContext(ThemeContext)
 }
 
+const ALL_THEMES: Theme[] = ["dark", "light", "luxury"]
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("dark")
+  const [theme, setThemeState] = useState<Theme>("dark")
 
   useEffect(() => {
     const stored = localStorage.getItem("clayberg-theme") as Theme | null
-    if (stored === "light" || stored === "dark") {
-      setTheme(stored)
+    if (stored && ALL_THEMES.includes(stored)) {
+      setThemeState(stored)
     }
   }, [])
 
   useEffect(() => {
     const html = document.documentElement
-    if (theme === "light") {
-      html.classList.add("light")
-      html.classList.remove("dark")
-    } else {
-      html.classList.remove("light")
-      html.classList.add("dark")
-    }
+    // Remove all theme classes first
+    ALL_THEMES.forEach((t) => html.classList.remove(t))
+    // Apply current theme class (dark is the default :root, still add class for consistency)
+    html.classList.add(theme)
     localStorage.setItem("clayberg-theme", theme)
   }, [theme])
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"))
+  const setTheme = (newTheme: Theme) => {
+    setThemeState(newTheme)
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   )
