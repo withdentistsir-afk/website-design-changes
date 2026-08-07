@@ -25,13 +25,12 @@ export function Hero() {
       {/* Background image */}
       <motion.div style={{ y, scale }} className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1800&q=85&fit=crop"
-          alt="آشپزخانه مدرن کلایبرگ"
+          src="/images/hero-kitchen.png"
+          alt="آشپزخانه لوکس کلایبرگ"
           fill
           priority
           className="object-cover object-center"
           sizes="100vw"
-          crossOrigin="anonymous"
         />
         {/* Dark overlay — matches reference: very dark overall, especially top+bottom */}
         <div className="absolute inset-0 bg-background/70" />
