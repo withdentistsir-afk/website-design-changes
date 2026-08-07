@@ -20,12 +20,12 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background w-full"
+      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-background w-full"
     >
       {/* Background image */}
       <motion.div style={{ y, scale }} className="absolute inset-0 z-0">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%207%2C%202026%2C%2007_43_10%20PM-KzfJR3ZUrFkCVENLteYklBBwYA4lxv.png"
+          src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1800&q=85&fit=crop"
           alt="آشپزخانه مدرن کلایبرگ"
           fill
           priority
@@ -33,10 +33,9 @@ export function Hero() {
           sizes="100vw"
           crossOrigin="anonymous"
         />
-        {/* Dark gradient overlay - heavier at top and bottom, lighter in center */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/50 to-background/80" />
-        {/* Side vignettes */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_40%,rgba(0,0,0,0.6)_100%)]" />
+        {/* Dark overlay — matches reference: very dark overall, especially top+bottom */}
+        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/80" />
       </motion.div>
 
       {/* Content */}

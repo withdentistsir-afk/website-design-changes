@@ -18,7 +18,7 @@ export function AboutPreview() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section className="py-28 px-6">
+    <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center" ref={ref}>
           {/* Image */}
