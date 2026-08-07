@@ -152,6 +152,7 @@
 
 /* Accent divider */
 .gold-line {
-  background: linear-gradient(90deg, transparent, #56b5be, transparent);
+  background: linear-gradient(90deg, transparent, #56b5be 20%, #82cdd4 50%, #56b5be 80%, transparent);
   height: 1px;
+  opacity: 0.85;
 }
