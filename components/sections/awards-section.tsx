@@ -32,7 +32,9 @@ export function AwardsSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section className="py-16 px-6">
+    <section className="py-16 px-6 bg-card relative">
+      {/* bottom separator */}
+      <div className="absolute bottom-0 inset-x-0 h-px gold-line" />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div ref={ref} className="text-center mb-16">

@@ -41,7 +41,9 @@ export function AboutPreview() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section className="py-24 px-6 overflow-hidden" ref={ref}>
+    <section className="py-24 px-6 overflow-hidden bg-background relative" ref={ref}>
+      {/* bottom separator */}
+      <div className="absolute bottom-0 inset-x-0 h-px gold-line" />
       <div className="max-w-7xl mx-auto">
 
         {/* ── Top: label + heading + image in a magazine-style grid ── */}

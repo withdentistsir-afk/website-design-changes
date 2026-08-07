@@ -147,7 +147,11 @@ export function FaqSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section ref={ref} className="py-20 bg-background">
+    <section ref={ref} className="py-20 bg-surface relative">
+      {/* top separator */}
+      <div className="absolute top-0 inset-x-0 h-px gold-line" />
+      {/* bottom separator */}
+      <div className="absolute bottom-0 inset-x-0 h-px gold-line" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}
