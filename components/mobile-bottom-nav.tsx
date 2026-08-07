@@ -6,11 +6,11 @@ import { motion } from "framer-motion"
 import { Home, Search, ArrowLeftRight, Phone, Info } from "lucide-react"
 
 const mobileNavItems = [
-  { href: "/", label: "خانه", icon: Home },
-  { href: "/products", label: "جستجو", icon: Search },
-  { href: "/compare", label: "مقایسه", icon: ArrowLeftRight },
-  { href: "/about", label: "درباره ما", icon: Info },
-  { href: "/contact", label: "تماس", icon: Phone },
+  { href: "/",         label: "خانه",     icon: Home },
+  { href: "/products", label: "محصولات",  icon: Search },
+  { href: "/compare",  label: "مقایسه",   icon: ArrowLeftRight },
+  { href: "/about",    label: "درباره ما", icon: Info },
+  { href: "/contact",  label: "تماس",     icon: Phone },
 ]
 
 export function MobileBottomNav() {
