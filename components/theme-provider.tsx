@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react"
 
-export type Theme = "dark" | "light" | "luxury"
+export type Theme = "dark" | "light"
 
 interface ThemeContextValue {
   theme: Theme
@@ -18,7 +18,7 @@ export function useTheme() {
   return useContext(ThemeContext)
 }
 
-const ALL_THEMES: Theme[] = ["dark", "light", "luxury"]
+const ALL_THEMES: Theme[] = ["dark", "light"]
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("dark")

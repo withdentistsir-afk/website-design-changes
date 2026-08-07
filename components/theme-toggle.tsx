@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Sun, Moon, Sparkles } from "lucide-react"
+import { Sun, Moon } from "lucide-react"
 import { useTheme, type Theme } from "@/components/theme-provider"
 
 const themes: { id: Theme; label: string; icon: React.ReactNode; bg: string; fg: string; ring: string }[] = [
@@ -21,14 +21,6 @@ const themes: { id: Theme; label: string; icon: React.ReactNode; bg: string; fg:
     bg: "oklch(0.98 0 0)",
     fg: "oklch(0.12 0 0)",
     ring: "rgba(58,154,163,0.4)",
-  },
-  {
-    id: "luxury",
-    label: "تم لوکس",
-    icon: <Sparkles size={16} strokeWidth={1.8} />,
-    bg: "linear-gradient(135deg, oklch(0.17 0.012 60) 0%, oklch(0.13 0.008 60) 100%)",
-    fg: "#c9a84c",
-    ring: "rgba(201,168,76,0.5)",
   },
 ]
 
