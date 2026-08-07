@@ -13,6 +13,7 @@ import { products, categories, type ProductCategory } from "@/lib/data"
 function ProductsContent() {
   const searchParams = useSearchParams()
   const [active, setActive] = useState<ProductCategory | "all">("all")
+  const [activeSub, setActiveSub] = useState<string>("all")
   const [search, setSearch] = useState("")
   const headerRef = useRef(null)
   const headerInView = useInView(headerRef, { once: true })
@@ -20,22 +21,33 @@ function ProductsContent() {
   // Sync from URL query params
   useEffect(() => {
     const cat = searchParams.get("cat")
+    const sub = searchParams.get("sub")
     const q = searchParams.get("search")
     if (cat && categories.some((c) => c.id === cat)) setActive(cat as ProductCategory)
+    if (sub) setActiveSub(sub)
     if (q) setSearch(q)
   }, [searchParams])
+
+  // Reset subcategory when main category changes
+  const handleCatChange = (cat: ProductCategory | "all") => {
+    setActive(cat)
+    setActiveSub("all")
+  }
 
   const normalized = search.trim().toLowerCase()
   const filtered = products.filter((p) => {
     const matchesCat = active === "all" || p.category === active
+    const matchesSub = activeSub === "all" || p.subcategory === activeSub
     const matchesSearch =
       normalized === "" ||
       [p.name, p.model, p.categoryLabel, p.description, ...p.features]
         .join(" ")
         .toLowerCase()
         .includes(normalized)
-    return matchesCat && matchesSearch
+    return matchesCat && matchesSub && matchesSearch
   })
+
+  const activeCategory = categories.find((c) => c.id === active)
 
   return (
     <main className="min-h-screen bg-background">
@@ -95,10 +107,11 @@ function ProductsContent() {
               </button>
             )}
           </div>
+          {/* Main category pills */}
           <div className="flex items-center gap-3 overflow-x-auto pb-1 scrollbar-hide">
             <SlidersHorizontal size={14} className="text-muted-foreground shrink-0" />
             <button
-              onClick={() => setActive("all")}
+              onClick={() => handleCatChange("all")}
               className={`shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 active === "all"
                   ? "bg-gold text-background"
@@ -110,7 +123,7 @@ function ProductsContent() {
             {categories.map((cat) => (
               <button
                 key={cat.id}
-                onClick={() => setActive(cat.id as ProductCategory)}
+                onClick={() => handleCatChange(cat.id as ProductCategory)}
                 className={`shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   active === cat.id
                     ? "bg-gold text-background"
@@ -121,6 +134,35 @@ function ProductsContent() {
               </button>
             ))}
           </div>
+
+          {/* Subcategory pills — shown only when a category with subcategories is selected */}
+          {activeCategory && activeCategory.subcategories && activeCategory.subcategories.length > 0 && (
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide pr-6">
+              <button
+                onClick={() => setActiveSub("all")}
+                className={`shrink-0 px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
+                  activeSub === "all"
+                    ? "bg-gold/20 text-gold border border-gold/40"
+                    : "border border-border/60 text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                همه {activeCategory.label}
+              </button>
+              {activeCategory.subcategories.map((sub) => (
+                <button
+                  key={sub.id}
+                  onClick={() => setActiveSub(sub.id)}
+                  className={`shrink-0 px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
+                    activeSub === sub.id
+                      ? "bg-gold/20 text-gold border border-gold/40"
+                      : "border border-border/60 text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {sub.label}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

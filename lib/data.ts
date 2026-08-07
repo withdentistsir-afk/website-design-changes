@@ -18,11 +18,57 @@ export interface Product {
 }
 
 export const categories = [
-  { id: 'hood', label: 'هود آشپزخانه', icon: 'wind', count: 30, description: 'هودهای شومینه‌ای و مخفی با قدرت مکش 850 متر مکعب' },
-  { id: 'hob', label: 'اجاق گاز', icon: 'flame', count: 40, description: 'صفحه گاز شیشه‌ای و استیل با ۵ تا ۶ شعله' },
-  { id: 'sink', label: 'سینک آشپزخانه', icon: 'droplets', count: 20, description: 'سینک دست‌ساز، فانتزی و گرانیتی با ضمانت ۲ سال' },
-  { id: 'oven', label: 'فر توکار', icon: 'square', count: 5, description: 'فر برقی ۶۰ سانتی با تا ۱۸ برنامه پخت' },
-  { id: 'microwave', label: 'ماکروویو', icon: 'zap', count: 2, description: 'ماکروویو + فر با کانوکشن و گریل قدرتمند' },
+  {
+    id: 'hob',
+    label: 'اجاق گاز',
+    icon: 'flame',
+    count: 40,
+    description: 'صفحه گاز شیشه‌ای، استیل و برقی با ۵ تا ۶ شعله',
+    subcategories: [
+      { id: 'glass', label: 'اجاق گاز صفحه شیشه‌ای' },
+      { id: 'steel', label: 'اجاق گاز صفحه استیل' },
+      { id: 'electric', label: 'اجاق گاز برقی' },
+    ],
+  },
+  {
+    id: 'hood',
+    label: 'هود آشپزخانه',
+    icon: 'wind',
+    count: 30,
+    description: 'هودهای شومینه‌ای و مخفی با قدرت مکش ۸۵۰ متر مکعب',
+    subcategories: [
+      { id: 'chimney', label: 'هود شومینه‌ای' },
+      { id: 'hidden', label: 'هود مخفی' },
+    ],
+  },
+  {
+    id: 'sink',
+    label: 'سینک آشپزخانه',
+    icon: 'droplets',
+    count: 20,
+    description: 'سینک دست‌ساز، فانتزی و گرانیتی با ضمانت ۲ سال',
+    subcategories: [
+      { id: 'handmade', label: 'سینک آشپزخانه دست ساز' },
+      { id: 'fancy', label: 'سینک آشپزخانه فانتزی' },
+      { id: 'granite', label: 'سینک آشپزخانه گرانیتی' },
+    ],
+  },
+  {
+    id: 'oven',
+    label: 'فر توکار',
+    icon: 'square',
+    count: 5,
+    description: 'فر برقی ۶۰ سانتی با تا ۱۸ برنامه پخت',
+    subcategories: [],
+  },
+  {
+    id: 'microwave',
+    label: 'ماکروویو + فر',
+    icon: 'zap',
+    count: 2,
+    description: 'ماکروویو + فر با کانوکشن و گریل قدرتمند',
+    subcategories: [],
+  },
 ]
 
 export const products: Product[] = [

@@ -10,12 +10,43 @@ const navLinks = [
   {
     href: "/products",
     label: "محصولات",
-    children: [
-      { href: "/products?cat=hood", label: "هود آشپزخانه" },
-      { href: "/products?cat=hob", label: "اجاق گاز" },
-      { href: "/products?cat=sink", label: "سینک آشپزخانه" },
-      { href: "/products?cat=oven", label: "فر توکار" },
-      { href: "/products?cat=microwave", label: "ماکروویو" },
+    groups: [
+      {
+        label: "اجاق گاز",
+        href: "/products?cat=hob",
+        children: [
+          { href: "/products?cat=hob&sub=glass", label: "اجاق گاز صفحه شیشه‌ای" },
+          { href: "/products?cat=hob&sub=steel", label: "اجاق گاز صفحه استیل" },
+          { href: "/products?cat=hob&sub=electric", label: "اجاق گاز برقی" },
+        ],
+      },
+      {
+        label: "هود آشپزخانه",
+        href: "/products?cat=hood",
+        children: [
+          { href: "/products?cat=hood&sub=chimney", label: "هود شومینه‌ای" },
+          { href: "/products?cat=hood&sub=hidden", label: "هود مخفی" },
+        ],
+      },
+      {
+        label: "سینک آشپزخانه",
+        href: "/products?cat=sink",
+        children: [
+          { href: "/products?cat=sink&sub=handmade", label: "سینک دست ساز" },
+          { href: "/products?cat=sink&sub=fancy", label: "سینک فانتزی" },
+          { href: "/products?cat=sink&sub=granite", label: "سینک گرانیتی" },
+        ],
+      },
+      {
+        label: "فر توکار",
+        href: "/products?cat=oven",
+        children: [],
+      },
+      {
+        label: "ماکروویو + فر",
+        href: "/products?cat=microwave",
+        children: [],
+      },
     ],
   },
   { href: "/about", label: "درباره ما" },
@@ -62,7 +93,7 @@ export function Navbar() {
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-8 text-sm">
               {navLinks.map((link) =>
-                link.children ? (
+                link.groups ? (
                   <div key={link.href + link.label} className="relative group">
                     <button
                       className="flex items-center gap-1 text-foreground/70 hover:text-foreground transition-colors font-medium"
@@ -79,18 +110,32 @@ export function Navbar() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 10, scale: 0.97 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute top-full right-0 mt-3 w-52 bg-card border border-border rounded-xl shadow-2xl py-2 z-50"
+                          className="absolute top-full right-0 mt-3 bg-card border border-border rounded-2xl shadow-2xl py-5 px-5 z-50 flex gap-6"
                           onMouseEnter={() => setMegaOpen(true)}
                           onMouseLeave={() => setMegaOpen(false)}
                         >
-                          {link.children.map((child) => (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-surface transition-colors"
-                            >
-                              {child.label}
-                            </Link>
+                          {link.groups.map((group) => (
+                            <div key={group.href} className="min-w-[140px]">
+                              <Link
+                                href={group.href}
+                                className="block text-xs font-bold text-gold tracking-widest uppercase mb-2 hover:text-gold/80 transition-colors"
+                              >
+                                {group.label}
+                              </Link>
+                              {group.children.length > 0 && (
+                                <div className="flex flex-col gap-0.5 border-t border-border/40 pt-2">
+                                  {group.children.map((child) => (
+                                    <Link
+                                      key={child.href}
+                                      href={child.href}
+                                      className="block py-1.5 text-sm text-foreground/65 hover:text-foreground hover:pr-1 transition-all duration-200"
+                                    >
+                                      {child.label}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
                           ))}
                         </motion.div>
                       )}
@@ -150,17 +195,28 @@ export function Navbar() {
                     >
                       {link.label}
                     </Link>
-                    {link.children && (
-                      <div className="pr-4 mt-1 mb-2 flex flex-col gap-1">
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            onClick={() => setMobileOpen(false)}
-                            className="py-2 text-sm text-foreground/50 hover:text-foreground transition-colors"
-                          >
-                            {child.label}
-                          </Link>
+                    {link.groups && (
+                      <div className="pr-4 mt-1 mb-2 flex flex-col gap-0">
+                        {link.groups.map((group) => (
+                          <div key={group.href}>
+                            <Link
+                              href={group.href}
+                              onClick={() => setMobileOpen(false)}
+                              className="block py-2 text-sm font-semibold text-gold/80"
+                            >
+                              {group.label}
+                            </Link>
+                            {group.children.map((child) => (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                onClick={() => setMobileOpen(false)}
+                                className="block py-1.5 pr-4 text-sm text-foreground/50 hover:text-foreground transition-colors"
+                              >
+                                {child.label}
+                              </Link>
+                            ))}
+                          </div>
                         ))}
                       </div>
                     )}
