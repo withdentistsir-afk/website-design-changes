@@ -62,8 +62,9 @@ export function AboutPreview() {
                 <span className="text-gold text-xs tracking-[0.35em] font-medium uppercase">درباره کلایبرگ</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-black text-foreground leading-[1.25] mb-6 text-balance">
-                پیشرو در <span className="text-gold">لوازم خانگی</span> توکار ایران
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.25rem] font-black text-foreground leading-[1.35] mb-6">
+                پیشرو در <span className="text-gold whitespace-nowrap">لوازم خانگی</span>{" "}
+                <span className="whitespace-nowrap">توکار ایران</span>
               </h2>
 
               <p className="text-base text-muted-foreground leading-relaxed mb-8 text-pretty max-w-md">
